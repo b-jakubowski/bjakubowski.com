@@ -2,7 +2,7 @@
 title: First test blog post
 description: This is the first test post on the website
 date: '2019-04-13'
-image: ''
+image: 'https://picsum.photos/500/300?image=1081'
 tags: ['javascript','react','gatsby']
 ---
 

@@ -10,6 +10,7 @@ const IndexPage = (props) => {
 			{postList.edges.map(({ node }, i) => (
 				<Link to={node.fields.slug} key={i} className="link" >
 					<div className="link" >
+						<img src={node.frontmatter.image}></img>
 						<h1>{node.frontmatter.title}</h1>
 						<span>{node.frontmatter.date}</span>
 						<p>{node.excerpt}</p>
@@ -31,6 +32,7 @@ export const listQuery = graphql`
 						title
 						date(formatString: "MMMM Do YYYY")
 						tags
+						image
 					}
 					excerpt(pruneLength: 250)
 					fields{
