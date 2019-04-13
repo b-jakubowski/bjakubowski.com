@@ -2,7 +2,7 @@
 title: Second test blog post
 description: This is the second test post on the website
 date: '2019-04-13'
-image: 'https://picsum.photos/500/300?image=1072'
+image: 'post-2-img.jpg'
 tags: ['javascript','react','gatsby']
 ---
 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
