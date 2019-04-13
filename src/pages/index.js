@@ -1,7 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import Img from 'gatsby-image';
 
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 
 const IndexPage = (props) => {
 	const postList = props.data.allMarkdownRemark;
@@ -10,7 +11,7 @@ const IndexPage = (props) => {
 			{postList.edges.map(({ node }, i) => (
 				<Link to={node.fields.slug} key={i} className="link" >
 					<div className="link" >
-						<img src={node.frontmatter.image}></img>
+						<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
 						<h1>{node.frontmatter.title}</h1>
 						<span>{node.frontmatter.date}</span>
 						<p>{node.excerpt}</p>
@@ -32,7 +33,16 @@ export const listQuery = graphql`
 						title
 						date(formatString: "MMMM Do YYYY")
 						tags
-						image
+						image {
+							childImageSharp {
+								resize(width: 1500, height: 1500) {
+									src
+								}
+								fluid(maxWidth: 786) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 					}
 					excerpt(pruneLength: 250)
 					fields{
