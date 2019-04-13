@@ -1,50 +1,51 @@
-const path = require("path")
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require('path')
+const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
+
 
 exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions
-	const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
-
 
 	return new Promise((resolve, reject) => {
-
-		resolve(graphql(`
-		{
-			allMarkdownRemark(
-				sort: { order: DESC, fields: [frontmatter___date] }
-				limit: 1000
-			) {
-				edges {
-					node {
-							fields{
+		resolve(
+			graphql(`
+				{
+					allMarkdownRemark(
+						sort: { order: DESC, fields: [frontmatter___date] }
+						limit: 1000
+					) {
+						edges {
+							node {
+								fields {
 									slug
+								}
+								frontmatter {
+									title
+								}
 							}
-						frontmatter {
-							title
 						}
 					}
 				}
-			}
-		}
-  `).then(result => {
-			if (result.errors) {
-				console.log(result.errors)
-				return reject(result.errors)
-			}
+			`).then(result => {
+				if (result.errors) {
+					console.log(result.errors)
+					return reject(result.errors)
+				}
 
-			const blogTemplate = path.resolve('./src/templates/blog-post.js');
-
-			result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-				createPage({
-					path: node.fields.slug,
-					component: blogTemplate,
-					context: {
-						slug: node.fields.slug,
-					},
+				const blogTemplate = path.resolve('./src/templates/blog-post.js')
+				const posts = result.data.allMarkdownRemark.edges
+				posts.forEach(({ node }, index) => {
+					createPage({
+						path: node.fields.slug,
+						component: blogTemplate,
+						context: {
+							slug: node.fields.slug,
+							prev: index === 0 ? null : posts[index - 1],
+							next: index === result.length - 1 ? null : posts[index + 1],
+						}, // additional data can be passed via context
+					})
 				})
+				return
 			})
-			return
-		})
 		)
 	})
 }
@@ -58,6 +59,5 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 			name: `slug`,
 			value: slug,
 		})
-
 	}
 }
