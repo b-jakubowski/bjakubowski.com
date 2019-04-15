@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Img from 'gatsby-image';
 
-import Layout from "../components/layout";
+import Layout from '../components/layout';
 
-const IndexPage = (props) => {
+const IndexPage = (props: { data: { allMarkdownRemark: any; }; }) => {
 	const postList = props.data.allMarkdownRemark;
 	return (
 		<Layout>
-			{postList.edges.map(({ node }, i) => (
+			{postList.edges.map(({ node }, i: number) => (
 				<Link to={node.fields.slug} key={i} className="link" >
 					<div className="link" >
 						<Img fluid={node.frontmatter.image.childImageSharp.fluid} />

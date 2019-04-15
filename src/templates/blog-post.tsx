@@ -29,7 +29,7 @@ function BlogPost(props) {
 				<div dangerouslySetInnerHTML={{ __html: post.html }} />
 				<div>
 					<span>Tagged in </span>
-					{tags.map((tag, i) => (
+					{tags.map((tag: string, i: number) => (
 						<a href={`/${tag}`} key={i} style={{ marginLeft: "10px" }} >{tag}</a>
 					))}
 				</div>
