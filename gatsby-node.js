@@ -8,34 +8,34 @@ exports.createPages = ({ actions, graphql }) => {
 	return new Promise((resolve, reject) => {
 		resolve(
 			graphql(`
-        {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            limit: 1000
-          ) {
-            edges {
-              node {
-                fields {
-                  slug
+				{
+					allMarkdownRemark(
+						sort: { order: DESC, fields: [frontmatter___date] }
+						limit: 1000
+					) {
+						edges {
+							node {
+								fields {
+									slug
 
-                }
-                frontmatter {
-                  title
-                  tags
-                }
-              }
-            }
-          }
-        }
-      `).then(result => {
+								}
+								frontmatter {
+									title
+									tags
+								}
+							}
+						}
+					}
+				}
+			`).then(result => {
 				if (result.errors) {
 					console.log(result.errors)
 					return reject(result.errors)
 				}
 
 				const posts = result.data.allMarkdownRemark.edges
-				const blogTemplate = path.resolve('./src/templates/blog-post.js');
-				const tagsTemplate = path.resolve('./src/templates/tag-template.js');
+				const blogTemplate = path.resolve('./src/templates/blog-post.tsx');
+				const tagsTemplate = path.resolve('./src/templates/tag-template.tsx');
 
 				let allTags = []
 				_.each(posts, edge => {
