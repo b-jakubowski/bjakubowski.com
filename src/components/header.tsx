@@ -1,44 +1,21 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import "./header.css";
+import Button from "@material-ui/core/Button";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 const Header = ({ siteTitle }) => (
-	<header
-		style={{
-			background: `rebeccapurple`,
-			marginBottom: `1.45rem`,
-		}}
-	>
-		<div
-			style={{
-				margin: `0 auto`,
-				maxWidth: 960,
-				padding: `1.45rem 1.0875rem`,
-			}}
-		>
-			<h1 style={{ margin: 0 }}>
-				<Link
-					to="/"
-					style={{
-						color: `white`,
-						textDecoration: `none`,
-					}}
-				>
-					{siteTitle}
-				</Link>
-			</h1>
-			<button>
-				<Link
-					to="/tags"
-					style={{
-						textDecoration: `none`,
-					}}
-				>
-					Tags
-				</Link>
-			</button>
-		</div>
-	</header>
+	<AppBar position="static" color="default">
+		<Toolbar className="header-elements">
+			<Typography variant="h6" color="inherit">{siteTitle}</Typography>
+			<Button variant="contained" color="default">
+				<Link to="/tags" className="header-btn-txt">Tags</Link>
+			</Button>
+		</Toolbar>
+	</AppBar>
 )
 
 Header.propTypes = {

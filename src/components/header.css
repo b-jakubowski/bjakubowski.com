@@ -1,0 +1,9 @@
+.header-elements {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-btn-txt {
+	text-decoration: none;
+	color: black;
+}
