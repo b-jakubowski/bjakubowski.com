@@ -1,44 +1,26 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Button from "@material-ui/core/Button";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import './header.scss';
+import theme from '../theme';
+
 
 const Header = ({ siteTitle }) => (
-	<header
-		style={{
-			background: `rebeccapurple`,
-			marginBottom: `1.45rem`,
-		}}
-	>
-		<div
-			style={{
-				margin: `0 auto`,
-				maxWidth: 960,
-				padding: `1.45rem 1.0875rem`,
-			}}
-		>
-			<h1 style={{ margin: 0 }}>
-				<Link
-					to="/"
-					style={{
-						color: `white`,
-						textDecoration: `none`,
-					}}
-				>
-					{siteTitle}
-				</Link>
-			</h1>
-			<button>
-				<Link
-					to="/tags"
-					style={{
-						textDecoration: `none`,
-					}}
-				>
-					Tags
-				</Link>
-			</button>
-		</div>
-	</header>
+	<MuiThemeProvider theme={theme}>
+		<AppBar position="static" color="primary" className="header">
+			<Toolbar className="header-elements">
+				<Typography variant="h6" color="secondary">{siteTitle}</Typography>
+				<Button variant="contained" color="secondary">
+					<Link to="/tags" className="header-btn-txt">Tags</Link>
+				</Button>
+			</Toolbar>
+		</AppBar>
+	</MuiThemeProvider>
 )
 
 Header.propTypes = {
