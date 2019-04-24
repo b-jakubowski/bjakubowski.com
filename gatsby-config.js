@@ -18,6 +18,7 @@ module.exports = {
 		`gatsby-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-typescript`,
+		`gatsby-plugin-sass`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
