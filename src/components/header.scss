@@ -1,5 +1,6 @@
 .header {
-	margin-bottom: 2em;
+	box-shadow: none !important;
+	border-bottom: 1px solid lightgray;
 }
 
 .header-elements {
@@ -9,5 +10,5 @@
 
 .header-btn-txt {
 	text-decoration: none;
-	color: white;
+	color: black;
 }
