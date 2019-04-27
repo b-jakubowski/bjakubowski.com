@@ -8,6 +8,7 @@
 		"@material-ui/core": "^3.9.3",
 		"gatsby": "^2.3.16",
 		"gatsby-image": "^2.0.38",
+		"gatsby-plugin-google-fonts": "^0.0.4",
 		"gatsby-plugin-manifest": "^2.0.28",
 		"gatsby-plugin-offline": "^2.0.25",
 		"gatsby-plugin-react-helmet": "^3.0.12",
