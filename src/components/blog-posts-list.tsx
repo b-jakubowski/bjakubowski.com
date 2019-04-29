@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import { Button, Card, CardActionArea, CardActions, CardContent, Typography } from "@material-ui/core";
+import { Card, CardActionArea, CardContent, Typography } from "@material-ui/core";
 import './blog-posts-list.scss';
 
 const BlogPostsList = ({ node }) => {
