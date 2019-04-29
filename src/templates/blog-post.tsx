@@ -4,6 +4,8 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby'
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
+import { MuiThemeProvider } from '@material-ui/core';
+import theme from '../theme';
 
 function BlogPost(props) {
 	const url = props.data.site.siteMetadata.siteUrl;
@@ -14,28 +16,30 @@ function BlogPost(props) {
 	const { prev, next } = props.pageContext;
 
 	return (
-		<Layout>
-			<MetaTags
-				title={title}
-				description={props.data.markdownRemark.excerpt}
-				thumbnail={thumbnail && url + thumbnail}
-				url={url}
-				pathname={props.location.pathname}
-			/>
-			<div>
-				{image && <Img fluid={image.childImageSharp.fluid} />}
-				<h1>{title}</h1>
-				<h3>{date}</h3>
-				<div dangerouslySetInnerHTML={{ __html: post.html }} />
+		<MuiThemeProvider theme={theme}>
+			<Layout>
+				<MetaTags
+					title={title}
+					description={props.data.markdownRemark.excerpt}
+					thumbnail={thumbnail && url + thumbnail}
+					url={url}
+					pathname={props.location.pathname}
+				/>
 				<div>
-					<span>Tagged in </span>
-					{tags.map((tag: string, i: number) => (
-						<a href={`/${tag}`} key={i} style={{ marginLeft: "10px" }} >{tag}</a>
-					))}
+					{image && <Img fluid={image.childImageSharp.fluid} />}
+					<h1>{title}</h1>
+					<h3>{date}</h3>
+					<div dangerouslySetInnerHTML={{ __html: post.html }} />
+					<div>
+						<span>Tagged in </span>
+						{tags.map((tag: string, i: number) => (
+							<a href={`/${tag}`} key={i} style={{ marginLeft: "10px" }} >{tag}</a>
+						))}
+					</div>
+					<PreviousNextPost prev={prev && prev.node} next={next && next.node} />
 				</div>
-				<PreviousNextPost prev={prev && prev.node} next={next && next.node} />
-			</div>
-		</Layout>
+			</Layout>
+		</MuiThemeProvider>
 	)
 }
 
