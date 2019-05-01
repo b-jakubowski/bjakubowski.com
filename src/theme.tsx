@@ -3,8 +3,16 @@ import { createMuiTheme } from "@material-ui/core";
 
 const theme = createMuiTheme({
 	palette: {
-		primary: { main: grey[50] },
-		secondary: { main: indigo[900] }
+		primary: {
+			light: grey[50],
+			main: grey[500],
+			dark: grey[900],
+		},
+		secondary: {
+			light: indigo[300],
+			main: indigo[500],
+			dark: indigo[700]
+		}
 	},
 	typography: {
 		useNextVariants: true
