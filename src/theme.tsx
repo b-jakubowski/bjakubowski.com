@@ -4,8 +4,7 @@ import { createMuiTheme } from "@material-ui/core";
 const theme = createMuiTheme({
 	palette: {
 		primary: { main: grey[50] },
-		secondary: { main: indigo[900] },
-		type: 'dark'
+		secondary: { main: indigo[900] }
 	},
 	typography: {
 		useNextVariants: true

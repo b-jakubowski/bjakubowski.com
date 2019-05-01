@@ -14,7 +14,7 @@ const BlogPostsList = ({ node }) => {
 						<Typography gutterBottom variant="h5" component="h2" >
 							{node.frontmatter.title}
 						</Typography>
-						<Typography gutterBottom variant="h6" component="h3">
+						<Typography gutterBottom component="p">
 							{node.frontmatter.date}
 						</Typography>
 						<Typography component="p">
