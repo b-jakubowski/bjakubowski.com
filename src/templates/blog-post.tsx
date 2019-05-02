@@ -2,18 +2,81 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby'
+import { MuiThemeProvider, Chip } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
-import { MuiThemeProvider } from '@material-ui/core';
 import theme from '../theme';
+import { Tag } from '../pages/tags';
 
-function BlogPost(props) {
+export interface BlogPostProps {
+	data: {
+		site: {
+			siteMetadata: {
+				siteUrl: any;
+			};
+		};
+		markdownRemark: {
+			html: any;
+			excerpt: string;
+			frontmatter: {
+				image: {
+					childImageSharp: {
+						resize: {
+							src: string;
+						};
+						fluid: any
+					}
+				};
+				date: Date;
+				tags: Tag[];
+				title: string;
+			};
+		};
+	};
+	pageContext: {
+		prev: any;
+		next: any;
+	};
+	location: {
+		pathname: string;
+	};
+}
+const blogPostTitle = {
+	color: theme.palette.primary.dark,
+	fontWeight: 700,
+	marginTop: '1em',
+	marginBottom: '0.2em',
+	textAlign: 'center'
+} as React.CSSProperties;
+
+const blogPostDate = {
+	color: theme.palette.primary.main,
+	textAlign: 'center'
+} as React.CSSProperties;
+
+const blogPostTags = {
+	display: 'flex',
+	justifyContent: 'center',
+	marginBottom: '2em'
+};
+
+const blogPostTag = {
+	marginRight: '1em'
+};
+
+function BlogPost(props: any) {
 	const url = props.data.site.siteMetadata.siteUrl;
 	const thumbnail = props.data.markdownRemark.frontmatter.image &&
 		props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src;
 	const post = props.data.markdownRemark;
 	const { title, date, image, tags } = post.frontmatter;
 	const { prev, next } = props.pageContext;
+
+	const dateFormatted = new Date(date).toLocaleDateString('en-US', {
+		year: "numeric",
+		month: "short",
+		day: "numeric"
+	});
 
 	return (
 		<MuiThemeProvider theme={theme}>
@@ -27,15 +90,22 @@ function BlogPost(props) {
 				/>
 				<div>
 					{image && <Img fluid={image.childImageSharp.fluid} />}
-					<h1>{title}</h1>
-					<h3>{date}</h3>
-					<div dangerouslySetInnerHTML={{ __html: post.html }} />
-					<div>
-						<span>Tagged in </span>
-						{tags.map((tag: string, i: number) => (
-							<a href={`/${tag}`} key={i} style={{ marginLeft: "10px" }} >{tag}</a>
+					<h1 style={blogPostTitle}>{title}</h1>
+					<h5 style={blogPostDate}>{dateFormatted}</h5>
+					<div style={blogPostTags}>
+						{tags.map((tag: Tag, i: number) => (
+							<Chip
+								label={tag}
+								component="a"
+								href={`/${tag}`}
+								key={i}
+								style={blogPostTag}
+								clickable
+								color="secondary"
+							/>
 						))}
 					</div>
+					<div dangerouslySetInnerHTML={{ __html: post.html }} />
 					<PreviousNextPost prev={prev && prev.node} next={next && next.node} />
 				</div>
 			</Layout>
@@ -52,6 +122,7 @@ export const query = graphql`
 			excerpt
 			frontmatter {
 				title
+				date
 				tags
 				image {
 					childImageSharp {
