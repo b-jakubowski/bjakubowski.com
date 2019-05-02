@@ -11,12 +11,17 @@ const blogPost = {
 
 const blogPostTitle = {
 	color: theme.palette.secondary.dark,
-	fontSize: '1.5em',
-	fontWeight: 500
+	fontSize: '2em',
+	fontWeight: 700,
+	marginBottom: '0.1em',
+	textAlign: 'center'
 };
 
 const blogPostDate = {
 	color: theme.palette.primary.main,
+	textAlign: 'center',
+	fontWeight: 500,
+	marginBottom: '1em'
 };
 
 const blogPostExcerpt = {
