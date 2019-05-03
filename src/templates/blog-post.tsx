@@ -41,6 +41,7 @@ export interface BlogPostProps {
 		pathname: string;
 	};
 }
+
 const blogPostTitle = {
 	color: theme.palette.primary.dark,
 	fontWeight: 700,

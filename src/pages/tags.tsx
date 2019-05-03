@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from "gatsby"
-import { MuiThemeProvider } from "@material-ui/core";
+import { MuiThemeProvider, Chip, List, ListItem, ListItemText } from "@material-ui/core";
 import Layout from '../components/layout';
 import theme from '../theme';
 
@@ -20,7 +20,6 @@ export interface tagsProps {
 
 function TagsPage(props: tagsProps) {
 	const data = props.data.allMarkdownRemark.group;
-
 	return (
 		<MuiThemeProvider theme={theme}>
 			<Layout>
