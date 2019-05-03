@@ -15,7 +15,7 @@ const PreviousNextPost = (props) => {
 	const { prev, next } = props
 
 	return (
-		<div style={{ display: 'flex' }}>
+		<div style={{ display: 'flex', marginTop: '4em' }}>
 			{prev &&
 				<div style={buttonContainer}>
 					<Tooltip title={prev.frontmatter.title}>
