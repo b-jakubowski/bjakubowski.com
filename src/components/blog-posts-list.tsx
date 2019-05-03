@@ -6,12 +6,12 @@ import './blog-posts-list.scss';
 import theme from '../theme';
 
 const blogPost = {
-	marginBottom: '3em'
+	margin: '0 1em 2em'
 };
 
 const blogPostTitle = {
 	color: theme.palette.secondary.dark,
-	fontSize: '2em',
+	fontSize: '1.5em',
 	fontWeight: 700,
 	marginBottom: '0.1em',
 	textAlign: 'center'
@@ -25,16 +25,16 @@ const blogPostDate = {
 };
 
 const blogPostExcerpt = {
-	paddingBottom: '1.5em'
+	paddingBottom: '0.5em'
 };
 
 const BlogPostsList = ({ node }) => {
 	return (
 		<Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
 			<Card style={blogPost} className="blog-post">
-				<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
+				<Img fluid={node.frontmatter.image.childImageSharp.fluid} style={{ height: '150px' }} />
 				<CardContent>
-					<Typography gutterBottom component="h2" style={blogPostTitle}>
+					<Typography gutterBottom component="h2" style={blogPostTitle} className="blog-post-title" >
 						{node.frontmatter.title}
 					</Typography>
 					<Typography gutterBottom component="p" style={blogPostDate}>
