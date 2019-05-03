@@ -1,19 +1,32 @@
 import React from 'react';
 import { Link, graphql } from "gatsby"
+import { MuiThemeProvider, Chip, List, ListItem, ListItemText } from "@material-ui/core";
 import Layout from '../components/layout';
-import { MuiThemeProvider } from "@material-ui/core";
 import theme from '../theme';
 
-function TagsPage(props) {
-	const data = props.data.allMarkdownRemark.group
+export interface Tag {
+	[x: string]: any;
+	fieldValue: React.ReactNode;
+	totalCount: number;
+}
 
+export interface tagsProps {
+	data: {
+		allMarkdownRemark: {
+			group: Tag;
+		};
+	};
+}
+
+function TagsPage(props: tagsProps) {
+	const data = props.data.allMarkdownRemark.group;
 	return (
 		<MuiThemeProvider theme={theme}>
 			<Layout>
 				<div className="tags">
 					<h1>All tags</h1>
 					{
-						data.map((tag, index) => (
+						data.map((tag: Tag, index: number) => (
 							<Link to={`/${tag.fieldValue}`} key={index}>
 								{tag.fieldValue} {`(${tag.totalCount})`}
 							</Link>

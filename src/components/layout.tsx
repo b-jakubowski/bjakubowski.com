@@ -4,38 +4,95 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import theme from "../theme";
+import { Drawer, List, ListItem, ListItemText } from "@material-ui/core";
+import { Tag } from "../pages/tags";
+
+
+const container = {
+	display: 'flex'
+}
+
+const content = {
+	display: 'flex',
+	justifyContent: 'center',
+	flexDirection: 'column',
+	alignItems: 'center',
+	width: '100%',
+	margin: '13em 0 3em 0'
+}
+
+const drawer = {
+	width: '200px'
+}
+
+const drawerListItem = {
+	textTransform: 'uppercase',
+	fontSize: '0.8rem',
+	fontFamily: `"Roboto", "Helvetica", "Arial", sans- serif`,
+	letterSpacing: '0.00938em'
+}
+
+const drawerTitle = {
+	display: 'flex',
+	alignItems: 'center',
+	height: '64px',
+	paddingLeft: '16px',
+	fontFamily: `"Roboto", "Helvetica", "Arial", sans- serif`,
+	color: theme.palette.primary.main,
+	backgroundColor: theme.palette.primary.light
+}
+
+const tags = {
+	width: drawer.width,
+	display: 'flex',
+	flexDirection: 'column'
+}
 
 const Layout = ({ children }) => (
 	<StaticQuery
 		query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-		render={data => (
-			<>
-				<Header />
-				<div
-					style={{
-						margin: `0 auto`,
-						maxWidth: 960,
-						padding: `0px 1.0875rem 1.45rem`,
-						marginTop: '4em',
-					}}
-				>
-					<main>{children}</main>
-					<footer>
-						© {new Date().getFullYear()}, Built with
-            {` `}
-						<a href="https://www.gatsbyjs.org">Gatsby</a>
-					</footer>
+			query {
+				allMarkdownRemark(
+					limit: 2000) {
+					group(field: frontmatter___tags) {
+						fieldValue
+						totalCount
+					}
+				}
+			}
+		`}
+		render={props => {
+			const data = props.allMarkdownRemark.group;
+
+			return (
+				<div style={container}>
+					<Header />
+					<Drawer
+						variant="permanent"
+						anchor="left"
+						style={drawer}
+					>
+						<div style={tags}>
+							<div style={drawerTitle}>
+								<h3 style={{ margin: '0' }}>TAGS</h3>
+							</div>
+							<List>
+								{data.map((tag: Tag, index: number) => (
+									<ListItem button component="a" href={`/${tag.fieldValue}`} key={index}>
+										<ListItemText disableTypography primary={`${tag.fieldValue} (${tag.totalCount})`} style={drawerListItem} />
+									</ListItem>
+								))}
+							</List>
+						</div>
+					</Drawer>
+					<div style={content}>
+						<main style={{ maxWidth: '960px' }}>{children}</main>
+					</div>
 				</div>
-			</>
-		)}
+			)
+		}
+		}
 	/>
 )
 
