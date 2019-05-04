@@ -30,7 +30,11 @@ const drawerListItem = {
 	textTransform: 'uppercase',
 	fontSize: '0.8rem',
 	fontFamily: `"Roboto", "Helvetica", "Arial", sans- serif`,
-	letterSpacing: '0.00938em'
+	letterSpacing: '0.00938em',
+	width: '180px',
+	whiteSpace: 'nowrap',
+	overflow: 'hidden',
+	textOverflow: 'ellipsis'
 }
 
 const drawerTitle = {
