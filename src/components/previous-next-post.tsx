@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Tooltip } from '@material-ui/core';
+import { Link } from 'gatsby';
 
 const buttonText = {
 	textDecoration: 'none',
@@ -21,7 +22,7 @@ const PreviousNextPost = (props) => {
 					<Tooltip title={prev.frontmatter.title}>
 						<Button color="secondary" variant="contained">
 							<span className="material-icons">keyboard_arrow_left</span>
-							<a href={prev.fields.slug} style={buttonText}>Prev post</a>
+							<Link to={prev.fields.slug} style={buttonText}>Prev post</Link>
 						</Button>
 					</Tooltip>
 				</div>
@@ -31,7 +32,7 @@ const PreviousNextPost = (props) => {
 					<div style={{ flexGrow: 1 }}></div>
 					<Tooltip title={next.frontmatter.title}>
 						<Button color="secondary" variant="contained">
-							<a href={next.fields.slug} style={buttonText}>Next post</a>
+							<Link to={next.fields.slug} style={buttonText}>Next post</Link>
 							<span className="material-icons">keyboard_arrow_right</span>
 						</Button>
 					</Tooltip>

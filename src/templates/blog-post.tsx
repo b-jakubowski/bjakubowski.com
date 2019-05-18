@@ -1,8 +1,8 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import { graphql } from 'gatsby'
-import { MuiThemeProvider, Chip } from '@material-ui/core';
+import { graphql, Link } from 'gatsby'
+import { MuiThemeProvider, Fab } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
 import theme from '../theme';
@@ -62,7 +62,14 @@ const blogPostTags = {
 };
 
 const blogPostTag = {
-	marginRight: '1em'
+	marginRight: '1em',
+	height: '2.5em'
+};
+
+const blogPostTagText = {
+	textDecoration: 'none',
+	color: 'white',
+	fontSize: '0.8em'
 };
 
 function BlogPost(props: any) {
@@ -95,15 +102,9 @@ function BlogPost(props: any) {
 					<h5 style={blogPostDate}>{dateFormatted}</h5>
 					<div style={blogPostTags}>
 						{tags.map((tag: Tag, i: number) => (
-							<Chip
-								label={tag}
-								component="a"
-								href={`/${tag}`}
-								key={i}
-								style={blogPostTag}
-								clickable
-								color="secondary"
-							/>
+							<Fab variant="extended" key={i} style={blogPostTag} color="secondary">
+								<Link to={`/${tag}`} style={blogPostTagText}>{tag}</Link>
+							</Fab>
 						))}
 					</div>
 					<div dangerouslySetInnerHTML={{ __html: post.html }} />

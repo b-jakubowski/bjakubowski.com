@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
@@ -28,6 +28,7 @@ const drawer = {
 
 const drawerListItem = {
 	textTransform: 'uppercase',
+	textDecoration: 'none',
 	fontSize: '0.8rem',
 	fontFamily: `"Roboto", "Helvetica", "Arial", sans- serif`,
 	letterSpacing: '0.00938em',
@@ -83,8 +84,8 @@ const Layout = ({ children }) => (
 							</div>
 							<List>
 								{data.map((tag: Tag, index: number) => (
-									<ListItem button component="a" href={`/${tag.fieldValue}`} key={index}>
-										<ListItemText disableTypography primary={`${tag.fieldValue} (${tag.totalCount})`} style={drawerListItem} />
+									<ListItem button key={index}>
+										<Link to={`/${tag.fieldValue}`} style={drawerListItem}>{`${tag.fieldValue} (${tag.totalCount})`}</Link>
 									</ListItem>
 								))}
 							</List>
