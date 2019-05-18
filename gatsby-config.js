@@ -3,10 +3,16 @@ module.exports = {
 		title: `Bartosz Jakubowski Blog`,
 		description: `Blog made with GatsbyJS`,
 		author: `b-jakubowski`,
-		siteUrl: `https://github.com/b-jakubowski`
+		siteUrl: `http://www.bjakubowski.com`
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
+		`gatsby-transformer-sharp`,
+		`gatsby-image`,
+		`gatsby-plugin-sharp`,
+		`gatsby-plugin-typescript`,
+		`gatsby-plugin-sass`,
+		`gatsby-transformer-remark`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -21,11 +27,6 @@ module.exports = {
 				],
 			},
 		},
-		`gatsby-transformer-sharp`,
-		`gatsby-image`,
-		`gatsby-plugin-sharp`,
-		`gatsby-plugin-typescript`,
-		`gatsby-plugin-sass`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -38,8 +39,13 @@ module.exports = {
 				icon: `src/images/logo-icon.png`,
 			},
 		},
-		`gatsby-transformer-remark`,
-		'gatsby-plugin-offline',
+		{
+			resolve: `gatsby-plugin-s3`,
+			options: {
+				bucketName: 'bjakubowski-blog',
+				acl: null
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
