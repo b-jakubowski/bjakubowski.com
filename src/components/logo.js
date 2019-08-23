@@ -1,8 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import logoImg from '../images/logo-icon.png';
-import theme from '../theme';
 
 const logo = {
 	display: 'flex',
@@ -12,14 +10,13 @@ const logo = {
 }
 
 const logoImage = {
-	width: '50px',
-	marginBottom: '0.5em'
+	width: '30px',
+	margin: 0
 }
 
 const Logo = () => (
 	<Link to="/" style={logo}>
 		<img src={logoImg} alt="bj-logo" style={logoImage} />
-		<Typography variant="h6" style={{ color: theme.palette.secondary.dark }}>Bartek Jakubowski</Typography>
 	</Link>
 )
 
