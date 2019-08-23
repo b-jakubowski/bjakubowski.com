@@ -6,13 +6,13 @@ import { MuiThemeProvider } from "@material-ui/core";
 import theme from '../theme';
 import BlogPostsList from "../components/blog-posts-list";
 
-const IndexPage = (props: { data: { allMarkdownRemark: any; }; }) => {
+const IndexPage = (props) => {
 	const postList = props.data.allMarkdownRemark;
 
 	return (
 		<MuiThemeProvider theme={theme}>
 			<Layout>
-				{postList.edges.map(({ node }, i: number) => (
+				{postList.edges.map(({ node }, i) => (
 					<BlogPostsList node={node} key={i} />
 				))}
 			</Layout>

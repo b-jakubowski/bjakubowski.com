@@ -4,7 +4,7 @@ import { MuiThemeProvider } from '@material-ui/core';
 import Layout from '../components/layout';
 import theme from '../theme';
 
-function Tags(props: { data: { allMarkdownRemark: { edges: any; }; }; pageContext: { tag: any; }; }) {
+function Tags(props) {
 	const posts = props.data.allMarkdownRemark.edges;
 	const { tag } = props.pageContext;
 	return (
@@ -13,7 +13,7 @@ function Tags(props: { data: { allMarkdownRemark: { edges: any; }; }; pageContex
 				<h1>{`Available posts  in ${tag}`}</h1>
 				<div className="tags">
 					{
-						posts.map(({ node }: { node: { fields: any, frontmatter: any } }, index: number) => {
+						posts.map(({ node }, index) => {
 							return (
 								<Link to={node.fields.slug} key={index} >
 									{node.frontmatter.title}
