@@ -6,41 +6,6 @@ import { MuiThemeProvider, Fab } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
 import theme from '../theme';
-import { Tag } from '../pages/tags';
-
-export interface BlogPostProps {
-	data: {
-		site: {
-			siteMetadata: {
-				siteUrl: any;
-			};
-		};
-		markdownRemark: {
-			html: any;
-			excerpt: string;
-			frontmatter: {
-				image: {
-					childImageSharp: {
-						resize: {
-							src: string;
-						};
-						fluid: any
-					}
-				};
-				date: Date;
-				tags: Tag[];
-				title: string;
-			};
-		};
-	};
-	pageContext: {
-		prev: any;
-		next: any;
-	};
-	location: {
-		pathname: string;
-	};
-}
 
 const blogPostTitle = {
 	color: theme.palette.primary.dark,
@@ -48,12 +13,12 @@ const blogPostTitle = {
 	marginTop: '1em',
 	marginBottom: '0.2em',
 	textAlign: 'center'
-} as React.CSSProperties;
+};
 
 const blogPostDate = {
 	color: theme.palette.primary.main,
 	textAlign: 'center'
-} as React.CSSProperties;
+};
 
 const blogPostTags = {
 	display: 'flex',
@@ -72,7 +37,7 @@ const blogPostTagText = {
 	fontSize: '0.8em'
 };
 
-function BlogPost(props: any) {
+function BlogPost(props) {
 	const url = props.data.site.siteMetadata.siteUrl;
 	const thumbnail = props.data.markdownRemark.frontmatter.image &&
 		props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src;
@@ -101,7 +66,7 @@ function BlogPost(props: any) {
 					<h1 style={blogPostTitle}>{title}</h1>
 					<h5 style={blogPostDate}>{dateFormatted}</h5>
 					<div style={blogPostTags}>
-						{tags.map((tag: Tag, i: number) => (
+						{tags.map((tag, i) => (
 							<Fab variant="extended" key={i} style={blogPostTag} color="secondary">
 								<Link to={`/${tag}`} style={blogPostTagText}>{tag}</Link>
 							</Fab>

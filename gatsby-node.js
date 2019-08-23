@@ -34,8 +34,8 @@ exports.createPages = ({ actions, graphql }) => {
 				}
 
 				const posts = result.data.allMarkdownRemark.edges
-				const blogTemplate = path.resolve('./src/templates/blog-post.tsx');
-				const tagsTemplate = path.resolve('./src/templates/tag-template.tsx');
+				const blogTemplate = path.resolve('./src/templates/blog-post.js');
+				const tagsTemplate = path.resolve('./src/templates/tag-template.js');
 
 				let allTags = []
 				_.each(posts, edge => {

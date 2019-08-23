@@ -5,8 +5,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import theme from "../theme";
-import { Drawer, List, ListItem, ListItemText } from "@material-ui/core";
-import { Tag } from "../pages/tags";
+import { Drawer, List, ListItem } from "@material-ui/core";
 
 
 const container = {
@@ -83,7 +82,7 @@ const Layout = ({ children }) => (
 								<h3 style={{ margin: '0' }}>TAGS</h3>
 							</div>
 							<List>
-								{data.map((tag: Tag, index: number) => (
+								{data.map((tag, index) => (
 									<ListItem button key={index}>
 										<Link to={`/${tag.fieldValue}`} style={drawerListItem}>{`${tag.fieldValue} (${tag.totalCount})`}</Link>
 									</ListItem>
