@@ -39,6 +39,11 @@ module.exports = {
 			},
 		},
 		{
+			resolve: `gatsby-plugin-material-ui`,
+			options: {
+			},
+		},
+		{
 			resolve: `gatsby-plugin-s3`,
 			options: {
 				bucketName: 'bjakubowski-blog',
