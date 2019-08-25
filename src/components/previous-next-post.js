@@ -20,10 +20,12 @@ const PreviousNextPost = (props) => {
 			{prev &&
 				<div style={buttonContainer}>
 					<Tooltip title={prev.frontmatter.title}>
-						<Button color="secondary" variant="contained">
-							<span className="material-icons">keyboard_arrow_left</span>
-							<Link to={prev.fields.slug} style={buttonText}>Prev post</Link>
-						</Button>
+						<Link to={prev.fields.slug} style={buttonText}>
+							<Button color="secondary" variant="contained">
+								<span className="material-icons">keyboard_arrow_left</span>
+								Prev post
+							</Button>
+						</Link>
 					</Tooltip>
 				</div>
 			}
@@ -31,10 +33,12 @@ const PreviousNextPost = (props) => {
 				<div style={buttonContainer}>
 					<div style={{ flexGrow: 1 }}></div>
 					<Tooltip title={next.frontmatter.title}>
-						<Button color="secondary" variant="contained">
-							<Link to={next.fields.slug} style={buttonText}>Next post</Link>
-							<span className="material-icons">keyboard_arrow_right</span>
-						</Button>
+						<Link to={next.fields.slug} style={buttonText}>
+							<Button color="secondary" variant="contained">
+								Next post
+								<span className="material-icons">keyboard_arrow_right</span>
+							</Button>
+						</Link>
 					</Tooltip>
 				</div>
 			}

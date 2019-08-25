@@ -5,21 +5,21 @@ import "./layout.css"
 import { List, ListItem, ListItemText } from "@material-ui/core"
 
 const styles = {
-  drawerListItem: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    textTransform: 'uppercase',
-    fontSize: '0.80rem'
-  },
-  counter: {
-    width: '80%'
-  }
+	drawerListItem: {
+		width: '100%',
+		display: 'flex',
+		justifyContent: 'space-between',
+		textTransform: 'uppercase',
+		fontSize: '0.70rem'
+	},
+	counter: {
+		width: '80%'
+	}
 }
 
 const DrawerTagsList = () => (
-  <StaticQuery
-    query={graphql`
+	<StaticQuery
+		query={graphql`
 			query {
 				allMarkdownRemark(
 					limit: 2000) {
@@ -30,24 +30,24 @@ const DrawerTagsList = () => (
 				}
 			}
 		`}
-    render={props => {
-      const data = props.allMarkdownRemark.group;
+		render={props => {
+			const data = props.allMarkdownRemark.group;
 
-      return (
-        <List>
-          {data.map((tag, index) => (
-            <ListItem button key={index}>
-              <Link to={`/${tag.fieldValue}`} style={styles.drawerListItem}>
-                <ListItemText primary={tag.fieldValue} style={styles.counter} />
-                <ListItemText primary={`(${tag.totalCount})`}/>
-              </Link>
-            </ListItem>
-          ))}
-        </List>
-      )
-    }
-    }
-  />
+			return (
+				<List>
+					{data.map((tag, index) => (
+						<Link to={`/${tag.fieldValue}`} style={styles.drawerListItem}>
+							<ListItem button key={index}>
+									<ListItemText primary={tag.fieldValue} style={styles.counter} />
+									<ListItemText primary={`(${tag.totalCount})`}/>
+							</ListItem>
+						</Link>
+					))}
+				</List>
+			)
+		}
+		}
+	/>
 )
 
 export default DrawerTagsList

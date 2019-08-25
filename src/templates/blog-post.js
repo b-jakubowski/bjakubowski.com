@@ -67,9 +67,11 @@ function BlogPost(props) {
 					<h5 style={blogPostDate}>{dateFormatted}</h5>
 					<div style={blogPostTags}>
 						{tags.map((tag, i) => (
-							<Fab variant="extended" key={i} style={blogPostTag} color="secondary">
-								<Link to={`/${tag}`} style={blogPostTagText}>{tag}</Link>
-							</Fab>
+							<Link to={`/${tag}`} style={blogPostTagText}>
+								<Fab variant="extended" key={i} style={blogPostTag} color="secondary">
+									{tag}
+								</Fab>
+							</Link>
 						))}
 					</div>
 					<div dangerouslySetInnerHTML={{ __html: post.html }} />

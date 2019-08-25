@@ -103,30 +103,37 @@ const Header = () => {
 				})}
 			>
 				<Toolbar>
-					<IconButton
+					<Button
 						color="inherit"
-						aria-label="Open drawer"
-						onClick={handleDrawerOpen}
+						variant="extended"
 						edge="start"
-						className={clsx(classes.menuButton, open && classes.hide)}
-					>
+						aria-label="delete"
+						onClick={handleDrawerOpen}
+						className={clsx(classes.menuButton, open && classes.hide)}>
 						<MenuIcon />
-					</IconButton>
+						<span style={{marginLeft: '0.5em'}}>Tags</span>
+					</Button>
 					<div className={clsx(classes.logo)}>
 						<Logo />
 					</div>
-					<Button variant="text" color="secondary" className={classes.linkBtn}>
+					{/* <Button variant="text" color="secondary" className={classes.linkBtn}>
 						<Link to="/tags" className={classes.linkBtnText}>Tags</Link>
-					</Button>
-					<Button variant="text" color="secondary" className={classes.linkBtn}>
-						<Link to="/" className={classes.linkBtnText}>Projects</Link>
-					</Button>
-					<Button variant="text" color="secondary" className={classes.linkBtn}>
-						<Link to="/" className={classes.linkBtnText}>Blog</Link>
-					</Button>
-					<Button variant="text" color="secondary" className={classes.linkBtn}>
-						<Link to="/" className={classes.linkBtnText}>About</Link>
-					</Button>
+					</Button> */}
+					<Link to="/" className={classes.linkBtnText}>
+						<Button variant="text" color="secondary" className={classes.linkBtn}>
+							Blog
+						</Button>
+					</Link>
+					<Link to="/projects" className={classes.linkBtnText}>
+						<Button variant="text" color="secondary" className={classes.linkBtn}>
+							Projects
+						</Button>
+					</Link>
+					<Link to="/about" className={classes.linkBtnText}>
+						<Button variant="text" color="secondary" className={classes.linkBtn}>
+							About
+						</Button>
+					</Link>
 				</Toolbar>
 			</AppBar>
 			<Drawer
