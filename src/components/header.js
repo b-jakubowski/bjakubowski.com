@@ -105,7 +105,7 @@ const Header = () => {
 				<Toolbar>
 					<Button
 						color="inherit"
-						variant="extended"
+						variant="text"
 						edge="start"
 						aria-label="delete"
 						onClick={handleDrawerOpen}

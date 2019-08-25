@@ -36,7 +36,7 @@ const DrawerTagsList = () => (
 			return (
 				<List>
 					{data.map((tag, index) => (
-						<Link to={`/${tag.fieldValue}`} style={styles.drawerListItem}>
+						<Link to={`/${tag.fieldValue}`} style={styles.drawerListItem} key={index}>
 							<ListItem button key={index}>
 									<ListItemText primary={tag.fieldValue} style={styles.counter} />
 									<ListItemText primary={`(${tag.totalCount})`}/>

@@ -67,8 +67,8 @@ function BlogPost(props) {
 					<h5 style={blogPostDate}>{dateFormatted}</h5>
 					<div style={blogPostTags}>
 						{tags.map((tag, i) => (
-							<Link to={`/${tag}`} style={blogPostTagText}>
-								<Fab variant="extended" key={i} style={blogPostTag} color="secondary">
+							<Link to={`/${tag}`} style={blogPostTagText} key={i}>
+								<Fab variant="extended" style={blogPostTag} color="secondary">
 									{tag}
 								</Fab>
 							</Link>
