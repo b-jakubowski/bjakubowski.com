@@ -10,7 +10,6 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-image`,
 		`gatsby-plugin-sharp`,
-		`gatsby-plugin-sass`,
 		`gatsby-transformer-remark`,
 		{
 			resolve: `gatsby-source-filesystem`,
