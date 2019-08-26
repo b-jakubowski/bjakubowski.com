@@ -5,22 +5,24 @@ date: '2019-08-25'
 image: 'post-3-img.jpg'
 tags: ['typography','ui']
 ---
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged.
-
-
 **Typeface** - all type of a single design. Also known as font-family.
 
 
 <img alt="Gatsby" src="https://upload.wikimedia.org/wikipedia/en/a/a4/Font_types.svg" width="300" />
 
-It was popularised in
-the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-and more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.
+#### Basic typography concerns:
+1. **Pairing fonts** - pick ones with similar letter sizes and heights.
+1. **Line height** - a general rule is that the value should be 1.25 to 1.5 times greater than the font size.
+1. **Amount of space between letters** - sometimes needs to be tightened or loosened.
+1. **Line lenght** - if the Line lenght is long, the line height should be increased, and vice versa. For a single column design, many designers believe 65 characters is the perfect line lenght.
+1. **Hierarchy** - with different weights, styles, and sizes of fonts helps to create a flow of importance for your readers.
 
-## Why do we use it?
+#### Basic typography rules:
+1. Choose the right font. Consider which screen would user typically read your text on.
+1. Limit the number of fonts used. Look within the same font family.
+1. Text alignment- probably choose left. Its most common and easy to read.
+1. Follow hierarchy. Make use of your h1, h2, and h3 styles for headings and subsections within posts
 
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humor and the like).
+
+Sources:
+[Blog typography](https://convertkit.com/blog-typography)
