@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { Link } from 'gatsby'
-
 import clsx from 'clsx'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
@@ -14,10 +12,10 @@ import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import Button from "@material-ui/core/Button"
-import Logo from "./logo"
-
-import DrawerTagsList from './drawer-tags-list'
 import { Typography } from "@material-ui/core"
+
+import Logo from "./logo"
+import DrawerTagsList from './drawer-tags-list'
 
 const drawerWidth = 240
 
@@ -102,39 +100,41 @@ const Header = () => {
 					[classes.appBarShift]: open,
 				})}
 			>
-				<Toolbar>
-					<Button
-						color="inherit"
-						variant="text"
-						edge="start"
-						aria-label="delete"
-						onClick={handleDrawerOpen}
-						className={clsx(classes.menuButton, open && classes.hide)}>
-						<MenuIcon />
-						<span style={{marginLeft: '0.5em'}}>Tags</span>
-					</Button>
-					<div className={clsx(classes.logo)}>
-						<Logo />
-					</div>
-					{/* <Button variant="text" color="secondary" className={classes.linkBtn}>
-						<Link to="/tags" className={classes.linkBtnText}>Tags</Link>
-					</Button> */}
-					<Link to="/" className={classes.linkBtnText}>
-						<Button variant="text" color="secondary" className={classes.linkBtn}>
-							Blog
+				<nav>
+					<Toolbar>
+						<Button
+							color="inherit"
+							variant="text"
+							edge="start"
+							aria-label="delete"
+							onClick={handleDrawerOpen}
+							className={clsx(classes.menuButton, open && classes.hide)}>
+							<MenuIcon />
+							<span style={{marginLeft: '0.5em'}}>Tags</span>
 						</Button>
-					</Link>
-					<Link to="/projects" className={classes.linkBtnText}>
-						<Button variant="text" color="secondary" className={classes.linkBtn}>
-							Projects
-						</Button>
-					</Link>
-					<Link to="/about" className={classes.linkBtnText}>
-						<Button variant="text" color="secondary" className={classes.linkBtn}>
-							About
-						</Button>
-					</Link>
-				</Toolbar>
+						<div className={clsx(classes.logo)}>
+							<Logo />
+						</div>
+						<Link to="/" className={classes.linkBtnText}>
+							<Button variant="text" color="secondary" className={classes.linkBtn}>
+								Blog
+							</Button>
+						</Link>
+						<Link to="/projects" className={classes.linkBtnText}>
+							<Button variant="text" color="secondary" className={classes.linkBtn}>
+								Projects
+							</Button>
+						</Link>
+						<Link to="/about" className={classes.linkBtnText}>
+							<Button variant="text" color="secondary" className={classes.linkBtn}>
+								About
+							</Button>
+						</Link>
+						{/* <Button variant="text" color="secondary" className={classes.linkBtn}>
+							<Link to="/tags" className={classes.linkBtnText}>Tags</Link>
+						</Button> */}
+					</Toolbar>
+				</nav>
 			</AppBar>
 			<Drawer
 				className={classes.drawer}
@@ -145,18 +145,20 @@ const Header = () => {
 					paper: classes.drawerPaper,
 				}}
 			>
-				<div className={classes.drawerHeader}>
-					<Typography className={classes.drawerHeaderText}>Tags</Typography>
-					<IconButton onClick={handleDrawerClose}>
-						{theme.direction === 'ltr' ? (
-							<ChevronLeftIcon />
-						) : (
-							<ChevronRightIcon />
-						)}
-					</IconButton>
-				</div>
-				<Divider />
-				<DrawerTagsList />
+				<aside>
+					<div className={classes.drawerHeader}>
+						<Typography className={classes.drawerHeaderText}>Tags</Typography>
+						<IconButton onClick={handleDrawerClose}>
+							{theme.direction === 'ltr' ? (
+								<ChevronLeftIcon />
+							) : (
+								<ChevronRightIcon />
+							)}
+						</IconButton>
+					</div>
+					<Divider />
+					<DrawerTagsList />
+				</aside>
 			</Drawer>
 		</div>
 	)

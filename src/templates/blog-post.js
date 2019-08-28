@@ -61,22 +61,24 @@ function BlogPost(props) {
 					url={url}
 					pathname={props.location.pathname}
 				/>
-				<div>
-					{image && <Img fluid={image.childImageSharp.fluid} />}
-					<h1 style={blogPostTitle}>{title}</h1>
-					<h5 style={blogPostDate}>{dateFormatted}</h5>
-					<div style={blogPostTags}>
-						{tags.map((tag, i) => (
-							<Link to={`/${tag}`} style={blogPostTagText} key={i}>
-								<Fab variant="extended" style={blogPostTag} color="secondary">
-									{tag}
-								</Fab>
-							</Link>
-						))}
-					</div>
+				<article>
+					<header>
+						{image && <Img fluid={image.childImageSharp.fluid} />}
+						<h1 style={blogPostTitle}>{title}</h1>
+						<h5 style={blogPostDate}>{dateFormatted}</h5>
+						<div style={blogPostTags}>
+							{tags.map((tag, i) => (
+								<Link to={`/${tag}`} style={blogPostTagText} key={i}>
+									<Fab variant="extended" style={blogPostTag} color="secondary">
+										{tag}
+									</Fab>
+								</Link>
+							))}
+						</div>
+					</header>
 					<div dangerouslySetInnerHTML={{ __html: post.html }} />
 					<PreviousNextPost prev={prev && prev.node} next={next && next.node} />
-				</div>
+				</article>
 			</Layout>
 		</MuiThemeProvider>
 	)

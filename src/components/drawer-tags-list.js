@@ -9,11 +9,10 @@ const styles = {
 		width: '100%',
 		display: 'flex',
 		justifyContent: 'space-between',
-		textTransform: 'uppercase',
-		fontSize: '0.70rem'
+		textTransform: 'uppercase'
 	},
 	counter: {
-		width: '80%'
+		width: '80%',
 	}
 }
 
@@ -36,10 +35,10 @@ const DrawerTagsList = () => (
 			return (
 				<List>
 					{data.map((tag, index) => (
-						<Link to={`/${tag.fieldValue}`} style={styles.drawerListItem} key={index}>
-							<ListItem button key={index}>
-									<ListItemText primary={tag.fieldValue} style={styles.counter} />
-									<ListItemText primary={`(${tag.totalCount})`}/>
+						<Link to={`/${tag.fieldValue}`} key={index}>
+							<ListItem button key={index} style={styles.drawerListItem}>
+								<ListItemText primary={tag.fieldValue} style={styles.counter} />
+								<ListItemText primary={`(${tag.totalCount})`}/>
 							</ListItem>
 						</Link>
 					))}

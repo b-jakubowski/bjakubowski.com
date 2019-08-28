@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby'
-import { MuiThemeProvider, Fab } from '@material-ui/core';
+import { MuiThemeProvider } from '@material-ui/core';
 import Layout from '../components/layout';
 import theme from '../theme';
+import Button from "@material-ui/core/Button"
 
 const styles = {
 	tagsContainer: {
@@ -33,9 +34,9 @@ function Tags(props) {
 						posts.map(({ node }, index) => {
 							return (
 								<Link to={node.fields.slug} key={index} style={styles.blogPostTagText}>
-									<Fab variant="outlined" key={index} style={styles.blogPostTag} color="secondary">
+									<Button variant="outlined" key={index} style={styles.blogPostTag} color="secondary">
 										{node.frontmatter.title}
-									</Fab>
+									</Button>
 								</Link>
 							)
 						})
