@@ -31,18 +31,20 @@ const BlogPostsList = ({ node }) => {
 	return (
 		<Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
 			<Card style={blogPost} className="blog-post">
-				<Img fluid={node.frontmatter.image.childImageSharp.fluid} style={{ height: '150px' }} />
-				<CardContent>
-					<Typography gutterBottom component="h2" style={blogPostTitle} className="blog-post-title" >
-						{node.frontmatter.title}
-					</Typography>
-					<Typography gutterBottom component="p" style={blogPostDate}>
-						{node.frontmatter.date}
-					</Typography>
-					<Typography component="p" style={blogPostExcerpt}>
-						{node.excerpt}
-					</Typography>
-				</CardContent>
+				<article>
+					<Img fluid={node.frontmatter.image.childImageSharp.fluid} style={{ height: '150px' }} />
+					<CardContent>
+						<Typography gutterBottom component="h2" style={blogPostTitle} className="blog-post-title" >
+							{node.frontmatter.title}
+						</Typography>
+						<Typography gutterBottom component="p" style={blogPostDate}>
+							{node.frontmatter.date}
+						</Typography>
+						<Typography component="p" style={blogPostExcerpt}>
+							{node.excerpt}
+						</Typography>
+					</CardContent>
+				</article>
 			</Card>
 		</Link>
 	)
