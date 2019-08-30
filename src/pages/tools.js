@@ -1,14 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Button, MuiThemeProvider, List, ListItemText, ListItem, Typography, Divider } from "@material-ui/core";
-// import ListItemLink from '@material-ui/core';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
+import { Button, MuiThemeProvider } from "@material-ui/core";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import theme from "../theme";
-import toolsImg from '../images/tools.jpg';
+import theme from "../theme"
+import toolsImg from '../images/tools.jpg'
+import ToolsList from "../components/tools-list"
+import toolsListJson from "../assets/tools"
 
 const styles = {
 	headerImg: {
@@ -27,30 +26,18 @@ const styles = {
 	}
 }
 
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
-
 const ToolsPage = () => (
 	<MuiThemeProvider theme={theme}>
 		<Layout>
 			<SEO title="Front-end tools" />
 			<article>
-			<header>
-				<figure>
-					<img src={toolsImg} alt="tools img" width="840" height="552" style={styles.headerImg} />
-				</figure>
-				<h1>Useful tools for frontend developers</h1>
-			</header>
-			<List component="nav" aria-label="main mailbox folders">
-				<Typography style={styles.listHeader}>General</Typography>
-				<Divider />
-				<ListItemLink href="https://frontendchecklist.io/">
-					<ListItemText
-						primary="Frontend checklist"
-						secondary="exhaustive list of all elements you need to have / to test before launching your website / HTML page to production." />
-				</ListItemLink>
-			</List>
+				<header>
+					<figure>
+						<img src={toolsImg} alt="tools img" width="840" height="552" style={styles.headerImg} />
+					</figure>
+					<h1>Useful tools for frontend developers</h1>
+				</header>
+				<ToolsList props={toolsListJson} />
 			</article>
 			<Link to="/">
 				<Button color="secondary" variant="contained" style={styles.buttonText}>
