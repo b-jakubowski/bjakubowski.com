@@ -1,0 +1,113 @@
+{
+  "General": [
+    {
+      "title": "Frontend checklist",
+      "description": "List of all elements you need to have / to test before launching your website / HTML page to production.",
+      "link": "https://frontendchecklist.io"
+    },{
+      "title": "Browsersync",
+      "description": "Time-saving synchronised browser testing",
+      "link": "https://www.browsersync.io/"
+    },{
+      "title": "CanIUse",
+      "description": "Browser support tables for modern web technologies",
+      "link": "https://caniuse.com/"
+    }
+  ],
+  "Angular": [
+    {
+      "title": "CanIUse",
+      "description": "Browser support tables for modern web technologies",
+      "link": "https://caniuse.com/"
+    }
+  ],
+  "JavaScript": [
+    {
+      "title": "Benchmark.js",
+      "description": "A benchmarking library that supports high-resolution timers & returns statistically significant results.",
+      "link": "https://benchmarkjs.com"
+    }
+  ],
+  "HTML": [
+    {
+      "title": "dCodes",
+      "description": "Comprehensive HTML framework with over 1500+ template shortcodes.",
+      "link": "http://www.dcodes.net/2/docs/index.html"
+    },{
+      "title": "HTMLHint",
+      "description": "Static Code Analysis Tool for HTML",
+      "link": "https://htmlhint.com/"
+    }
+  ],
+  "CSS": [
+    {
+      "title": "clean-css",
+      "description": "CSS optimizing tool",
+      "link": "https://jakubpawlowicz.github.io/clean-css/"
+    },{
+      "title": "CSS Lint",
+      "description": "Linter for css",
+      "link": "http://csslint.net/"
+    },{
+      "title": "codeguide",
+      "description": "tandards for developing consistent, flexible, and sustainable HTML and CSS.",
+      "link": "https://codeguide.co"
+    },{
+      "title": "CSS BEM",
+      "description": "Blocks, Elements and Modifiers CSS Methodology",
+      "link": "http://getbem.com/introduction/"
+    },{
+      "title": "CSS Architecture",
+      "description": "Managing CSS in large, complex web projects",
+      "link": "https://github.com/jareware/css-architecture"
+    }
+  ],
+  "Regular Expression Editors": [
+    {
+      "title": "Regex101",
+      "description": "Online regex tester and debugger",
+      "link": "https://regex101.com"
+    }
+  ],
+  "Design": [
+    {
+      "title": "Figma",
+      "description": "Design, prototype, and collaborate all in the browser",
+      "link": "https://www.figma.com/"
+    },{
+      "title": "Adobe XD",
+      "description": "Wireframe, design, prototype for web, mobile, voice, and more",
+      "link": "https://www.adobe.com/products/xd.html"
+    },{
+      "title": "Colors",
+      "description": "A nicer color palette for the web",
+      "link": "http://clrs.cc/"
+    },{
+      "title": "Paletteable",
+      "description": "Generate beautiful color palettes using the knowledge of millions of designers.",
+      "link": "https://www.palettable.io"
+    },{
+      "title": "Spectrum",
+      "description": "Instantly test your web page with different types of color vision deficiency",
+      "link": "https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb?hl=en"
+    }
+  ],
+  "Linting": [
+    {
+      "title": "airbnb eslint",
+      "description": "Including config and styleguide",
+      "link": "https://github.com/airbnb/javascript"
+    }
+  ],
+  "Deploy": [
+    {
+      "title": "firebase",
+      "description": "Real Time DB and hosting",
+      "link": "https://firebase.google.com/"
+    },{
+      "title": "CircleCI",
+      "description": "Continous Integration tool",
+      "link": "https://circleci.com"
+    }
+  ]
+}

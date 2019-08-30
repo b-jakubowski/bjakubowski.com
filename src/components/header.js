@@ -120,16 +120,16 @@ const Header = () => {
 								Blog
 							</Button>
 						</Link>
-						<Link to="/projects" className={classes.linkBtnText}>
+						<Link to="/tools" className={classes.linkBtnText}>
+							<Button variant="text" color="secondary" className={classes.linkBtn}>
+								Tools
+							</Button>
+						</Link>
+						{/* <Link to="/projects" className={classes.linkBtnText}>
 							<Button variant="text" color="secondary" className={classes.linkBtn}>
 								Projects
 							</Button>
-						</Link>
-						<Link to="/about" className={classes.linkBtnText}>
-							<Button variant="text" color="secondary" className={classes.linkBtn}>
-								About
-							</Button>
-						</Link>
+						</Link> */}
 						{/* <Button variant="text" color="secondary" className={classes.linkBtn}>
 							<Link to="/tags" className={classes.linkBtnText}>Tags</Link>
 						</Button> */}
