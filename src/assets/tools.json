@@ -1,0 +1,39 @@
+{
+  "General": [
+    {
+      "title": "Frontend checklist",
+      "description": "List of all elements you need to have / to test before launching your website / HTML page to production.",
+      "link": "https://frontendchecklist.io"
+    }
+  ],
+  "Design": [
+    {
+      "title": "Figma",
+      "description": "Design, prototype, and collaborate all in the browser",
+      "link": "https://www.figma.com/"
+    },{
+      "title": "Adobe XD",
+      "description": "Wireframe, design, prototype for web, mobile, voice, and more",
+      "link": "https://www.adobe.com/products/xd.html"
+    },{
+      "title": "Colors",
+      "description": "A nicer color palette for the web",
+      "link": "http://clrs.cc/"
+    },{
+      "title": "Paletteable",
+      "description": "Generate beautiful color palettes using the knowledge of millions of designers.",
+      "link": "https://www.palettable.io"
+    },{
+      "title": "Spectrum",
+      "description": "Instantly test your web page with different types of color vision deficiency",
+      "link": "https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb?hl=en"
+    }
+  ],
+  "Linting": [
+    {
+      "title": "airbnb eslint",
+      "description": "Including config and styleguide",
+      "link": "https://github.com/airbnb/javascript"
+    }
+  ]
+}
