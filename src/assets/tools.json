@@ -12,6 +12,10 @@
       "title": "CanIUse",
       "description": "Browser support tables for modern web technologies",
       "link": "https://caniuse.com/"
+    },{
+      "title": "Frontend Performance checklist",
+      "description": "Runs faster than the others",
+      "link": "https://github.com/thedaviddias/Front-End-Performance-Checklist"
     }
   ],
   "Angular": [
@@ -26,7 +30,11 @@
       "title": "Benchmark.js",
       "description": "A benchmarking library that supports high-resolution timers & returns statistically significant results.",
       "link": "https://benchmarkjs.com"
-    }
+		},{
+      "title": "Clean Code JavaScript",
+      "description": "JavaScript Clean Code Guide",
+      "link": "https://github.com/ryanmcdermott/clean-code-javascript"
+		}		
   ],
   "HTML": [
     {

@@ -1,8 +1,9 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
+import { List, ListItem, ListItemText } from "@material-ui/core"
 
 import "./layout.css"
-import { List, ListItem, ListItemText } from "@material-ui/core"
+import useTagsList from "../hooks/useTagsList";
 
 const styles = {
 	drawerListItem: {
@@ -16,37 +17,21 @@ const styles = {
 	}
 }
 
-const DrawerTagsList = () => (
-	<StaticQuery
-		query={graphql`
-			query {
-				allMarkdownRemark(
-					limit: 2000) {
-					group(field: frontmatter___tags) {
-						fieldValue
-						totalCount
-					}
-				}
-			}
-		`}
-		render={props => {
-			const data = props.allMarkdownRemark.group;
+const DrawerTagsList = () => {
+	const tagsList = useTagsList();
 
-			return (
-				<List>
-					{data.map((tag, index) => (
-						<Link to={`/${tag.fieldValue}`} key={index}>
-							<ListItem button key={index} style={styles.drawerListItem}>
-								<ListItemText primary={tag.fieldValue} style={styles.counter} />
-								<ListItemText primary={`(${tag.totalCount})`}/>
-							</ListItem>
-						</Link>
-					))}
-				</List>
-			)
-		}
-		}
-	/>
-)
+	return (
+		<List>
+			{tagsList.map((tag, index) => (
+				<Link to={`/${tag.fieldValue}`} key={index}>
+					<ListItem button key={index} style={styles.drawerListItem}>
+						<ListItemText primary={tag.fieldValue} style={styles.counter} />
+						<ListItemText primary={`(${tag.totalCount})`}/>
+					</ListItem>
+				</Link>
+			))}
+		</List>
+	)
+}
 
 export default DrawerTagsList
