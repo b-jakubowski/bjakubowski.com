@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
 
 import Header from "./header"
 import SEO from "./seo"
 import "./layout.css"
-import useSiteMetadata from "../hooks/useSiteMetadata"
 
 const styles = {
 	container: {},
