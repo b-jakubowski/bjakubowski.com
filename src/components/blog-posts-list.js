@@ -4,44 +4,49 @@ import React from 'react';
 import { Card, CardContent, Typography } from "@material-ui/core";
 import theme from '../theme';
 
-const blogPost = {
-	margin: '0 1em 2em'
-};
-
-const blogPostTitle = {
-	color: theme.palette.secondary.dark,
-	fontSize: '1.5em',
-	fontWeight: 700,
-	marginBottom: '0.1em',
-	textAlign: 'center'
-};
-
-const blogPostDate = {
-	color: theme.palette.primary.main,
-	textAlign: 'center',
-	fontWeight: 500,
-	marginBottom: '1em'
-};
-
-const blogPostExcerpt = {
-	paddingBottom: '0.5em'
-};
+const styles = {
+	blogPost: {
+		margin: '0 1em 2em'
+	},
+	blogPostTitle: {
+		color: theme.palette.secondary.dark,
+		fontSize: '1.5em',
+		fontWeight: 700,
+		marginBottom: '0.1em',
+		textAlign: 'center'
+	},
+	blogPostDate: {
+		color: theme.palette.primary.main,
+		textAlign: 'center',
+		fontWeight: 500,
+		marginBottom: '1em'
+	},
+	blogPostExcerpt: {
+		paddingBottom: '0.5em'
+	}
+}
 
 const BlogPostsList = ({ node }) => {
+	const postSlug = node.fields.slug;
+	const postImg = node.frontmatter.image.childImageSharp.fluid;
+	const postTitle = node.frontmatter.title;
+	const postDate = node.frontmatter.date;
+	const postExcerpt = node.excerpt;
+
 	return (
-		<Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
-			<Card style={blogPost} className="blog-post">
+		<Link to={postSlug} style={{ textDecoration: 'none' }}>
+			<Card style={styles.blogPost}>
 				<article>
-					<Img fluid={node.frontmatter.image.childImageSharp.fluid} style={{ height: '150px' }} />
+					<Img fluid={postImg} style={{ height: '150px' }} />
 					<CardContent>
-						<Typography gutterBottom component="h2" style={blogPostTitle} className="blog-post-title" >
-							{node.frontmatter.title}
+						<Typography gutterBottom component="h2" style={styles.blogPostTitle} >
+							{postTitle}
 						</Typography>
-						<Typography gutterBottom component="p" style={blogPostDate}>
-							{node.frontmatter.date}
+						<Typography gutterBottom component="p" style={styles.blogPostDate}>
+							{postDate}
 						</Typography>
-						<Typography component="p" style={blogPostExcerpt}>
-							{node.excerpt}
+						<Typography component="p" style={styles.blogPostExcerpt}>
+							{postExcerpt}
 						</Typography>
 					</CardContent>
 				</article>
