@@ -18,6 +18,15 @@ module.exports = {
 				name: `images`,
 				path: `${__dirname}/src/images`
 			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/content`,
+				name: "pages",
+			},
+		},
+		{
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
 				fonts: [
@@ -47,13 +56,6 @@ module.exports = {
 			options: {
 				bucketName: 'bjakubowski-blog',
 				acl: null
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/content`,
-				name: "pages",
 			},
 		}
 	],
