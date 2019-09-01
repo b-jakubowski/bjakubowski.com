@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: `Bartosz Jakubowski Blog`,
-		description: `Blog made with GatsbyJS`,
+		title: `Bartek Jakubowski Blog`,
+		description: `Personal blog mostly about frontend development`,
 		author: `b-jakubowski`,
 		siteUrl: `http://www.bjakubowski.com`
 	},
@@ -11,6 +11,7 @@ module.exports = {
 		`gatsby-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-remark`,
+		`gatsby-plugin-offline`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -39,8 +40,7 @@ module.exports = {
 		},
 		{
 			resolve: `gatsby-plugin-material-ui`,
-			options: {
-			},
+			options: {},
 		},
 		{
 			resolve: `gatsby-plugin-s3`,
@@ -55,7 +55,6 @@ module.exports = {
 				path: `${__dirname}/content`,
 				name: "pages",
 			},
-		},
-		`gatsby-plugin-offline`,
+		}
 	],
 }
