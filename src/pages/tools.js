@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { Button, MuiThemeProvider } from "@material-ui/core";
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import theme from "../theme"
 import toolsImg from '../images/tools.jpg'
 import ToolsList from "../components/tools-list"
@@ -29,7 +28,6 @@ const styles = {
 const ToolsPage = () => (
 	<MuiThemeProvider theme={theme}>
 		<Layout>
-			<SEO title="Front-end tools" />
 			<article>
 				<header>
 					<figure>
