@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 
 import Header from "./header"
+import SEO from "./seo"
 import "./layout.css"
 import useSiteMetadata from "../hooks/useSiteMetadata"
 
@@ -18,23 +19,15 @@ const styles = {
 	}
 }
 
-const Layout = ({ children }) => {
-	const {title, description} = useSiteMetadata();
-
-	return (
+const Layout = ({ children }) => (
 		<>
-			<Helmet>
-				<html lang="en" />
-				<title>{title}</title>
-				<meta name="description" content={description} />
-			</Helmet>
+			<SEO />
 			<Header />
 			<div style={styles.content}>
 				<main style={{ maxWidth: '960px' }}>{children}</main>
 			</div>
 		</>
 	)
-}
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,

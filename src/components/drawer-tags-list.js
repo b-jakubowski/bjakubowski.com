@@ -1,8 +1,8 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
+import { List, ListItem, ListItemText } from "@material-ui/core"
 
 import "./layout.css"
-import { List, ListItem, ListItemText } from "@material-ui/core"
 
 const styles = {
 	drawerListItem: {
