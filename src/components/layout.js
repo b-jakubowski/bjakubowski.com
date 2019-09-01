@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 
 import Header from "./header"
 import "./layout.css"
-import useSiteMetadata from "../hooks/siteMetadata"
+import useSiteMetadata from "../hooks/useSiteMetadata"
 
 const styles = {
 	container: {},
