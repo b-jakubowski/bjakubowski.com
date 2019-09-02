@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import logoImg from '../images/logo-icon.png';
+import logoImg from '../../images/logo-icon.png';
 
 const logo = {
 	display: 'flex',

@@ -37,14 +37,14 @@ exports.createPages = ({ actions, graphql }) => {
 				const blogTemplate = path.resolve('./src/templates/blog-post.js');
 				const tagsTemplate = path.resolve('./src/templates/tag-template.js');
 
-				let allTags = []
+				let allTags = [];
 				_.each(posts, edge => {
 					if (_.get(edge, 'node.frontmatter.tags')) {
 						allTags = allTags.concat(edge.node.frontmatter.tags)
 					}
-				})
+				});
 
-				allTags = _.uniq(allTags)
+				allTags = _.uniq(allTags);
 
 				allTags.forEach((tag, index) => {
 					createPage({
@@ -53,8 +53,8 @@ exports.createPages = ({ actions, graphql }) => {
 						context: {
 							tag,
 						}
-					})
-				})
+					});
+				});
 
 				posts.forEach(({ node }, index) => {
 					createPage({
@@ -65,22 +65,22 @@ exports.createPages = ({ actions, graphql }) => {
 							prev: index === 0 ? null : posts[index - 1],
 							next: index === result.length - 1 ? null : posts[index + 1],
 						},
-					})
-				})
-				return
+					});
+				});
+				return;
 			})
-		)
-	})
+		);
+	});
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-	const { createNodeField } = actions
+	const { createNodeField } = actions;
 	if (node.internal.type === `MarkdownRemark`) {
 		const slug = createFilePath({ node, getNode, basePath: `pages` })
 		createNodeField({
 			node,
 			name: `slug`,
 			value: slug,
-		})
+		});
 	}
 }

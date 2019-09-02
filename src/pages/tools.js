@@ -4,7 +4,7 @@ import { Button, MuiThemeProvider } from "@material-ui/core";
 
 import Layout from "../components/layout"
 import theme from "../theme"
-import toolsImg from '../images/tools.jpg'
+import toolsImg from '../../images/tools.jpg'
 import ToolsList from "../components/tools-list"
 import toolsListJson from "../assets/tools"
 
