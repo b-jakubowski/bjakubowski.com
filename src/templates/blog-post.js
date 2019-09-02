@@ -7,35 +7,33 @@ import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
 import theme from '../theme';
 
-const blogPostTitle = {
-	color: theme.palette.primary.dark,
-	fontWeight: 700,
-	marginTop: '1em',
-	marginBottom: '0.2em',
-	textAlign: 'center'
-};
-
-const blogPostDate = {
-	color: theme.palette.primary.main,
-	textAlign: 'center'
-};
-
-const blogPostTags = {
-	display: 'flex',
-	justifyContent: 'center',
-	marginBottom: '2em'
-};
-
-const blogPostTag = {
-	marginRight: '1em',
-	height: '2.5em'
-};
-
-const blogPostTagText = {
-	textDecoration: 'none',
-	color: 'white',
-	fontSize: '0.8em'
-};
+const styles = {
+	blogPostTitle: {
+		color: theme.palette.primary.dark,
+		fontWeight: 700,
+		marginTop: '1em',
+		marginBottom: '0.2em',
+		textAlign: 'center'
+	},
+	blogPostDate: {
+		color: theme.palette.primary.main,
+		textAlign: 'center'
+	},
+	blogPostTags: {
+		display: 'flex',
+		justifyContent: 'center',
+		marginBottom: '2em'
+	},
+	blogPostTag: {
+		marginRight: '1em',
+		height: '2.5em'
+	},
+	blogPostTagText: {
+		textDecoration: 'none',
+		color: 'white',
+		fontSize: '0.8em'
+	}
+}
 
 function BlogPost(props) {
 	const url = props.data.site.siteMetadata.siteUrl;
@@ -64,12 +62,12 @@ function BlogPost(props) {
 				<article>
 					<header>
 						{image && <Img fluid={image.childImageSharp.fluid} />}
-						<h1 style={blogPostTitle}>{title}</h1>
-						<h5 style={blogPostDate}>{dateFormatted}</h5>
-						<div style={blogPostTags}>
+						<h1 style={styles.blogPostTitle}>{title}</h1>
+						<h5 style={styles.blogPostDate}>{dateFormatted}</h5>
+						<div style={styles.blogPostTags}>
 							{tags.map((tag, i) => (
-								<Link to={`/${tag}`} style={blogPostTagText} key={i}>
-									<Fab variant="extended" style={blogPostTag} color="secondary">
+								<Link to={`/${tag}`} style={styles.blogPostTagText} key={i}>
+									<Fab variant="extended" style={styles.blogPostTag} color="secondary">
 										{tag}
 									</Fab>
 								</Link>
@@ -106,11 +104,11 @@ export const query = graphql`
 					}
 				}
 			}
+		}
+		site {
+			siteMetadata {
+					siteUrl
+				}
+		}
 	}
-	site {
-		siteMetadata {
-				siteUrl
-			}
-	}
-}
 `
