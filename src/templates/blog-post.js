@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby'
-import { MuiThemeProvider, Fab } from '@material-ui/core';
+import { MuiThemeProvider, Fab, Button } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
 import theme from '../theme';
@@ -15,6 +15,7 @@ const styles = {
 	},
 	blogPostTitle: {
 		color: theme.palette.primary.dark,
+		fontFamily: 'Rubik',
 		fontWeight: 700,
 		marginTop: '1em',
 		marginBottom: '0.2em',
@@ -22,8 +23,8 @@ const styles = {
 	},
 	blogPostDate: {
 		color: theme.palette.primary.main,
+		fontFamily: 'Rubik',
 		textAlign: 'center',
-		fontFamily: 'Cormorant Infant',
 	},
 	blogPostTags: {
 		display: 'flex',
@@ -40,9 +41,9 @@ const styles = {
 		fontSize: '0.8em',
 	},
 	blogPostContent: {
-		fontFamily: 'ABeeZee',
+		fontFamily: 'Roboto',
 		fontSize: '1.15em',
-		lineHeight: '1.6em'
+		lineHeight: '1.6em',
 	}
 }
 
@@ -74,14 +75,14 @@ function BlogPost(props) {
 					<header>
 						{image && <Img fluid={image.childImageSharp.fluid} />}
 						<h1 style={styles.blogPostTitle}>{title}</h1>
-						<h3 style={styles.blogPostDate}>{dateFormatted}</h3>
+						<h4 style={styles.blogPostDate}>{dateFormatted}</h4>
 						<div style={styles.blogPostTags}>
 							{tags.map((tag, i) => (
 								<Link to={`/${tag}`} style={styles.blogPostTagText} key={i}>
-									<Fab variant="extended" style={styles.blogPostTag} color="secondary">
+									<Button variant="outlined" style={styles.blogPostTag} color="secondary">
 										{tag}
-									</Fab>
-								</Link>
+									</Button>
+							</Link>
 							))}
 						</div>
 					</header>

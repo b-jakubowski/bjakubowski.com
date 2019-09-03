@@ -10,7 +10,8 @@ const styles = {
 		textDecoration: 'none',
 	},
 	blogPostCard: {
-		margin: '0 1em 2em'
+		margin: '0 1em 2em',
+		boxShadow: 'none'
 	},
 	blogPost: {
 		':hover': {
@@ -22,10 +23,10 @@ const styles = {
 		borderBottom: `2px solid ${theme.palette.secondary.main}`
 	},
 	blogPostTitle: {
-		color: theme.palette.secondary.dark,
-		fontSize: '1.5em',
+		fontFamily: 'Rubik',
+		fontSize: '1.8em',
 		fontWeight: 700,
-		marginBottom: '0.1em',
+		marginBottom: '0.3em',
 		textAlign: 'center',
 		':hover': {
 			textDecoration: 'underline'
@@ -34,14 +35,15 @@ const styles = {
 	blogPostDate: {
 		color: theme.palette.primary.main,
 		marginBottom: '1em',
+		fontFamily: 'Roboto',
 		textAlign: 'center',
 		fontWeight: 500,
-		fontFamily: 'Cormorant Infant',
-		fontSize: '1.3em',
+		fontSize: '1em',
 	},
 	blogPostExcerpt: {
 		paddingBottom: '0.5em',
-		fontFamily: 'ABeeZee'
+		fontFamily: 'Roboto',
+		fontSize: '1em'
 	}
 }
 
