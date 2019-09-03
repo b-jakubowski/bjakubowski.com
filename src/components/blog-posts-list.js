@@ -2,18 +2,34 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import { Card, CardContent, Typography } from "@material-ui/core";
+import Radium from 'radium';
 import theme from '../theme';
 
 const styles = {
-	blogPost: {
+	link: {
+		textDecoration: 'none',
+	},
+	blogPostCard: {
 		margin: '0 1em 2em'
+	},
+	blogPost: {
+		':hover': {
+			backgroundColor: 'rgba(48, 63, 159, 0.15)'
+		}
+	},
+	blogPostImg: {
+		height: '150px',
+		borderBottom: `2px solid ${theme.palette.secondary.main}`
 	},
 	blogPostTitle: {
 		color: theme.palette.secondary.dark,
 		fontSize: '1.5em',
 		fontWeight: 700,
 		marginBottom: '0.1em',
-		textAlign: 'center'
+		textAlign: 'center',
+		':hover': {
+			textDecoration: 'underline'
+		}
 	},
 	blogPostDate: {
 		color: theme.palette.primary.main,
@@ -34,14 +50,14 @@ const BlogPostsList = ({ node }) => {
 	const postExcerpt = node.excerpt;
 
 	return (
-		<Link to={postSlug} style={{ textDecoration: 'none' }}>
-			<Card style={styles.blogPost}>
-				<article>
-					<Img fluid={postImg} style={{ height: '150px' }} />
+		<Link to={postSlug} style={styles.link}>
+			<Card style={styles.blogPostCard}>
+				<article style={styles.blogPost}>
+					<Img fluid={postImg} style={styles.blogPostImg} />
 					<CardContent>
-						<Typography gutterBottom component="h2" style={styles.blogPostTitle} >
+						<h2 style={styles.blogPostTitle} key={postTitle}>
 							{postTitle}
-						</Typography>
+						</h2>
 						<Typography gutterBottom component="p" style={styles.blogPostDate}>
 							{postDate}
 						</Typography>
@@ -55,4 +71,4 @@ const BlogPostsList = ({ node }) => {
 	)
 }
 
-export default BlogPostsList
+export default Radium(BlogPostsList);
