@@ -33,12 +33,15 @@ const styles = {
 	},
 	blogPostDate: {
 		color: theme.palette.primary.main,
+		marginBottom: '1em',
 		textAlign: 'center',
 		fontWeight: 500,
-		marginBottom: '1em'
+		fontFamily: 'Cormorant Infant',
+		fontSize: '1.3em',
 	},
 	blogPostExcerpt: {
-		paddingBottom: '0.5em'
+		paddingBottom: '0.5em',
+		fontFamily: 'ABeeZee'
 	}
 }
 
