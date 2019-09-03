@@ -32,6 +32,8 @@ module.exports = {
 				fonts: [
 					'material icons',
 					'roboto:300,400,500,700',
+					'Cormorant+Infant:400,400i,700,700i',
+					'ABeeZee:400'
 				],
 			},
 		},
