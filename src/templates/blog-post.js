@@ -8,6 +8,11 @@ import MetaTags from '../components/Metatags';
 import theme from '../theme';
 
 const styles = {
+	container: {
+		maxWidth: '880px',
+		padding: '1em',
+		backgroundColor: 'white'
+	},
 	blogPostTitle: {
 		color: theme.palette.primary.dark,
 		fontWeight: 700,
@@ -17,7 +22,8 @@ const styles = {
 	},
 	blogPostDate: {
 		color: theme.palette.primary.main,
-		textAlign: 'center'
+		textAlign: 'center',
+		fontFamily: 'Cormorant Infant',
 	},
 	blogPostTags: {
 		display: 'flex',
@@ -31,7 +37,12 @@ const styles = {
 	blogPostTagText: {
 		textDecoration: 'none',
 		color: 'white',
-		fontSize: '0.8em'
+		fontSize: '0.8em',
+	},
+	blogPostContent: {
+		fontFamily: 'ABeeZee',
+		fontSize: '1.15em',
+		lineHeight: '1.6em'
 	}
 }
 
@@ -59,11 +70,11 @@ function BlogPost(props) {
 					url={url}
 					pathname={props.location.pathname}
 				/>
-				<article>
+				<article style={styles.container}>
 					<header>
 						{image && <Img fluid={image.childImageSharp.fluid} />}
 						<h1 style={styles.blogPostTitle}>{title}</h1>
-						<h5 style={styles.blogPostDate}>{dateFormatted}</h5>
+						<h3 style={styles.blogPostDate}>{dateFormatted}</h3>
 						<div style={styles.blogPostTags}>
 							{tags.map((tag, i) => (
 								<Link to={`/${tag}`} style={styles.blogPostTagText} key={i}>
@@ -74,7 +85,7 @@ function BlogPost(props) {
 							))}
 						</div>
 					</header>
-					<div dangerouslySetInnerHTML={{ __html: post.html }} />
+					<div style={styles.blogPostContent} dangerouslySetInnerHTML={{ __html: post.html }} />
 					<PreviousNextPost prev={prev && prev.node} next={next && next.node} />
 				</article>
 			</Layout>
