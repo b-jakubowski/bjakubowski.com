@@ -1,21 +1,14 @@
 html {
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
+  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
-
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: rgba(0, 0, 0, 0.07) !important;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
 article,
 aside,
 details,
@@ -341,7 +334,7 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 2rem;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
@@ -353,7 +346,7 @@ ul {
   list-style-image: none;
 }
 ol {
-  margin-left: 1.45rem;
+  margin-left: 2rem;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
@@ -600,7 +593,7 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
+  font-family: "SFMono-Regular", Consolas, "Roboto", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
   padding: 0;
   padding-top: 0.2em;

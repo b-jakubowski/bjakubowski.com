@@ -22,7 +22,7 @@ const Layout = ({ children }) => (
 			<SEO />
 			<Header />
 			<div style={styles.content}>
-				<main style={{ maxWidth: '960px' }}>{children}</main>
+				<main style={{ maxWidth: '860px' }}>{children}</main>
 			</div>
 		</>
 	)
