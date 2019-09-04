@@ -19,7 +19,6 @@ function ListItemLink(props) {
 
 const ToolsList = ({ props }) => {
 	const toolsListHeaders = Object.keys(props);
-	console.log(props);
 	return (
 		<>
 			{toolsListHeaders.map((header, index) => (

@@ -1,5 +1,5 @@
 <figure>
-    <img alt="logo" src="./src/images/logo-icon.png" width="80" />
+    <img alt="logo" src="./images/logo-icon.png" width="80" />
 </figure>
 
 ## bjakubowski.com

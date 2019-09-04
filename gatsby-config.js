@@ -16,13 +16,13 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
-				path: `${__dirname}/src/images`
+				path: `images`
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${__dirname}/content`,
+				path: `content`,
 				name: "pages",
 			},
 		},
@@ -31,7 +31,8 @@ module.exports = {
 			options: {
 				fonts: [
 					'material icons',
-					'roboto:300,400,500,700',
+					'Roboto:300,400,500, 700',
+					'Rubik:300,400,500,700',
 				],
 			},
 		},
@@ -44,7 +45,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/logo-icon.png`,
+				icon: `images/logo-icon.png`,
 			},
 		},
 		{

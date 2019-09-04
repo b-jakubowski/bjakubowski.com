@@ -1,6 +1,6 @@
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import logoImg from '../images/logo-icon.png';
+import Img from 'gatsby-image'
 
 const logo = {
 	display: 'flex',
@@ -14,10 +14,24 @@ const logoImage = {
 	margin: 0
 }
 
-const Logo = () => (
-	<Link to="/" style={logo}>
-		<img src={logoImg} alt="bj-logo" style={logoImage} />
-	</Link>
-)
+const Logo = () => {
+	const { image } = useStaticQuery(graphql`
+		query {
+			image: file(relativePath: { eq: "logo-icon.png"}) {
+				sharp: childImageSharp {
+					fluid {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+		}
+	`);
+	
+	return (
+		<Link to="/" style={logo}>
+			<Img fluid={image.sharp.fluid} style={logoImage} />
+		</Link>
+	)
+}
 
 export default Logo

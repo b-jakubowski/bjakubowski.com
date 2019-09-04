@@ -6,6 +6,10 @@ import "./layout.css"
 import useTagsList from "../hooks/useTagsList";
 
 const styles = {
+	drawerLink: {
+		textDecoration: 'none',
+		color: 'black'
+	},
 	drawerListItem: {
 		width: '100%',
 		display: 'flex',
@@ -23,7 +27,7 @@ const DrawerTagsList = () => {
 	return (
 		<List>
 			{tagsList.map((tag, index) => (
-				<Link to={`/${tag.fieldValue}`} key={index}>
+				<Link to={`/${tag.fieldValue}`} key={index} style={styles.drawerLink}>
 					<ListItem button key={index} style={styles.drawerListItem}>
 						<ListItemText primary={tag.fieldValue} style={styles.counter} />
 						<ListItemText primary={`(${tag.totalCount})`}/>

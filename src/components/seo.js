@@ -5,14 +5,13 @@ import useSiteMetadata from "../hooks/useSiteMetadata";
 
 function SEO() {
 	const {title, description, author} = useSiteMetadata();
-	
+
 	return (
 		<Helmet
 			htmlAttributes={{
 				lang: `en`,
 			}}
 			title={title}
-			titleTemplate={`%s | ${title}`}
 			meta={[
 				{
 					name: `description`,

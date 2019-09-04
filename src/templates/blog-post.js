@@ -2,40 +2,51 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby'
-import { MuiThemeProvider, Fab } from '@material-ui/core';
+import { MuiThemeProvider, Button } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
 import theme from '../theme';
+import config from "../config"
 
-const blogPostTitle = {
-	color: theme.palette.primary.dark,
-	fontWeight: 700,
-	marginTop: '1em',
-	marginBottom: '0.2em',
-	textAlign: 'center'
-};
-
-const blogPostDate = {
-	color: theme.palette.primary.main,
-	textAlign: 'center'
-};
-
-const blogPostTags = {
-	display: 'flex',
-	justifyContent: 'center',
-	marginBottom: '2em'
-};
-
-const blogPostTag = {
-	marginRight: '1em',
-	height: '2.5em'
-};
-
-const blogPostTagText = {
-	textDecoration: 'none',
-	color: 'white',
-	fontSize: '0.8em'
-};
+const styles = {
+	container: {
+    maxWidth: config.layout.width,
+		padding: '1em',
+		backgroundColor: 'white'
+	},
+	blogPostTitle: {
+		color: theme.palette.primary.dark,
+		fontFamily: 'Rubik',
+		fontWeight: 700,
+		marginTop: '1em',
+		marginBottom: '0.2em',
+		textAlign: 'center'
+	},
+	blogPostDate: {
+		color: theme.palette.primary.main,
+		fontFamily: 'Rubik',
+		textAlign: 'center',
+	},
+	blogPostTags: {
+		display: 'flex',
+		justifyContent: 'center',
+		marginBottom: '2em'
+	},
+	blogPostTag: {
+		marginRight: '1em',
+		height: '2.5em'
+	},
+	blogPostTagText: {
+		textDecoration: 'none',
+		color: 'white',
+		fontSize: '0.8em',
+	},
+	blogPostContent: {
+		fontFamily: 'Roboto',
+		fontSize: '1.15em',
+		lineHeight: '1.6em',
+	}
+}
 
 function BlogPost(props) {
 	const url = props.data.site.siteMetadata.siteUrl;
@@ -61,22 +72,22 @@ function BlogPost(props) {
 					url={url}
 					pathname={props.location.pathname}
 				/>
-				<article>
+				<article style={styles.container}>
 					<header>
 						{image && <Img fluid={image.childImageSharp.fluid} />}
-						<h1 style={blogPostTitle}>{title}</h1>
-						<h5 style={blogPostDate}>{dateFormatted}</h5>
-						<div style={blogPostTags}>
+						<h1 style={styles.blogPostTitle}>{title}</h1>
+						<h4 style={styles.blogPostDate}>{dateFormatted}</h4>
+						<div style={styles.blogPostTags}>
 							{tags.map((tag, i) => (
-								<Link to={`/${tag}`} style={blogPostTagText} key={i}>
-									<Fab variant="extended" style={blogPostTag} color="secondary">
+								<Link to={`/${tag}`} style={styles.blogPostTagText} key={i}>
+									<Button variant="outlined" style={styles.blogPostTag} color="secondary">
 										{tag}
-									</Fab>
-								</Link>
+									</Button>
+							</Link>
 							))}
 						</div>
 					</header>
-					<div dangerouslySetInnerHTML={{ __html: post.html }} />
+					<div style={styles.blogPostContent} dangerouslySetInnerHTML={{ __html: post.html }} />
 					<PreviousNextPost prev={prev && prev.node} next={next && next.node} />
 				</article>
 			</Layout>
@@ -101,16 +112,16 @@ export const query = graphql`
 							src
 						}
 						fluid(maxWidth: 786) {
-							...GatsbyImageSharpFluid
+							...GatsbyImageSharpFluid_withWebp
 						}
 					}
 				}
 			}
+		}
+		site {
+			siteMetadata {
+					siteUrl
+				}
+		}
 	}
-	site {
-		siteMetadata {
-				siteUrl
-			}
-	}
-}
 `

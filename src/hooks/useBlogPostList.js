@@ -16,7 +16,7 @@ const useBlogPostList = () => {
 										src
 									}
 									fluid(maxWidth: 786) {
-										...GatsbyImageSharpFluid
+										...GatsbyImageSharpFluid_withWebp
 									}
 								}
 							}

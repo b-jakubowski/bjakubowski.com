@@ -4,16 +4,19 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import SEO from "./seo"
 import "./layout.css"
+import Footer from "./footer"
 
 const styles = {
-	container: {},
-	content: {
+	container: {
 		display: 'flex',
 		justifyContent: 'center',
 		flexDirection: 'column',
 		alignItems: 'center',
 		width: '100%',
-		margin: '10em 0 3em 0'
+		margin: '7em 0 4em 0'
+	},
+	content: {
+		maxWidth: '42rem'
 	}
 }
 
@@ -21,9 +24,10 @@ const Layout = ({ children }) => (
 		<>
 			<SEO />
 			<Header />
-			<div style={styles.content}>
-				<main style={{ maxWidth: '960px' }}>{children}</main>
-			</div>
+			<main style={styles.container}>
+				<div style={styles.content}>{children}</div>
+			</main>
+			<Footer/>
 		</>
 	)
 
