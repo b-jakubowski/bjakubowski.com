@@ -29,29 +29,30 @@ All type of a single design. Also known as font-family.
 
 
 ### 2. Basic typography concerns:
-1. **Pairing fonts** - pick ones with similar letter sizes and heights.
-1. **Line height** - a general rule is that the value should be 1.25 to 1.5 times greater than the font size.
-1. **Amount of space between letters** - sometimes needs to be tightened or loosened.
-1. **Line lenght** - if the Line lenght is long, the line height should be increased, and vice versa. For a single column design, many designers believe 65 characters is the perfect line lenght.
-1. **Hierarchy** - with different weights, styles, and sizes of fonts helps to create a flow of importance for your readers.
+1. Pairing fonts - pick ones with similar letter sizes and heights.
+1. Line height - a general rule is that the value should be 1.25 to 1.5 times greater than the font size.
+1. Amount of space between letters - sometimes needs to be tightened or loosened.
+1. Line lenght - if the Line lenght is long, the line height should be increased, and vice versa. For a single column design, many designers believe 65 characters is the perfect line lenght.
+1. Hierarchy - with different weights, styles, and sizes of fonts helps to create a flow of importance for your readers.
 
 ### 3. Basic typography rules:
-1. **Choose the right font**. Consider which screen would user typically read your text on, and what is appropriate font forr your message.
-1. **Take your time**. Quality typesetting requires lots of patience
-1. **Limit the number of fonts used**. Look within the same font family.
-1. **Text alignment** - probably choose left. Its most common and easy to read.
-1. **Follow hierarchy**. Make use of your h1, h2, and h3 styles for headings and subsections within posts
-1. **Test**. Make sure to test how the fonts look on different platforms.
-1. **Make sure you have proper fonts for all the flavours of type you need**. If You dont, browser will create bold and italic font without Your control
+1. Choose the right font.Consider which screen would user typically read your text on, and what is appropriate font forr your message.
+1. Take your time. Quality typesetting requires lots of patience
+1. Limit the number of fonts used. Look within the same font family.
+1. Text alignment - probably choose left. Its most common and easy to read.
+1. Follow hierarchy. Make use of your h1, h2, and h3 styles for headings and subsections within posts
+1. Test. Make sure to test how the fonts look on different platforms.
+1. Make sure you have proper fonts for all the flavours of type you need. If You dont, browser will create bold and italic font without Your control
 1. If choose popular typeface, try pairing it with a less used typeface to make the design feel distinctive.
-1. **Style guide** - make one at the beginning of the project for consistency purposes.
-1. **Use contrasting typefaces, rather than similar ones.**
-1. **Lines need maximum lengths**
-1. **Lines need minimum lengths**
-1. **Break words at the end of the line**
+1. Style guide - make one at the beginning of the project for consistency purposes.
+1. Use contrasting typefaces, rather than similar ones.
+1. Lines need maximum lengths
+1. Lines need minimum lengths
+1. Break words at the end of the line
 
 
 ### 4. Helpful tools:
+
 * [Google webfonts helper](https://google-webfonts-helper.herokuapp.com)
 * [Fontjoy - pairing fonts](https://fontjoy.com/)
 * [Mixfont - Font generator and pairings](https://www.mixfont.com/)
