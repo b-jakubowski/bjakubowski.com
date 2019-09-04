@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby'
-import { MuiThemeProvider, Fab, Button } from '@material-ui/core';
+import { MuiThemeProvider, Button } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
 import theme from '../theme';

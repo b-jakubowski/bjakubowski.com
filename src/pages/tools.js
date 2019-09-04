@@ -7,8 +7,14 @@ import Layout from "../components/layout"
 import theme from "../theme"
 import ToolsList from "../components/tools-list"
 import toolsListJson from "../assets/tools"
+import config from "../config";
 
 const styles = {
+	container: {
+    maxWidth: config.layout.width,
+		padding: '1em',
+		backgroundColor: 'white'
+	},
 	headerImg: {
 		height: '200px',
 		width: '100%',
@@ -41,7 +47,7 @@ const ToolsPage = () => {
 	return(
 		<MuiThemeProvider theme={theme}>
 			<Layout>
-				<article>
+				<article style={styles.container}>
 					<header>
 						<figure>
 							<Img fluid={image.sharp.fluid} style={styles.headerImg} />
@@ -49,13 +55,13 @@ const ToolsPage = () => {
 						<h1>Useful tools for frontend developers</h1>
 					</header>
 					<ToolsList props={toolsListJson} />
+					<Link to="/">
+						<Button color="secondary" variant="contained" style={styles.buttonText}>
+							<span className="material-icons">keyboard_arrow_left</span>
+							Home page
+						</Button>
+					</Link>
 				</article>
-				<Link to="/">
-					<Button color="secondary" variant="contained" style={styles.buttonText}>
-						<span className="material-icons">keyboard_arrow_left</span>
-						Home page
-					</Button>
-				</Link>
 			</Layout>
 		</MuiThemeProvider>
 	)
