@@ -24,9 +24,8 @@ const styles = {
 		fontWeight: 'bold',
 		fontSize: '1.4em'
 	},
-	buttonText: {
+	button: {
 		marginTop: '4em',
-		textDecoration: 'none',
 		color: 'white'
 	}
 }
@@ -55,8 +54,8 @@ const ToolsPage = () => {
 						<h1>Useful tools for frontend developers</h1>
 					</header>
 					<ToolsList props={toolsListJson} />
-					<Link to="/">
-						<Button color="secondary" variant="contained" style={styles.buttonText}>
+					<Link to="/" style={{textDecoration: 'none'}}>
+						<Button color="secondary" variant="contained" style={styles.button}>
 							<span className="material-icons">keyboard_arrow_left</span>
 							Home page
 						</Button>
