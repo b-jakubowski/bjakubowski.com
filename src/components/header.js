@@ -108,7 +108,7 @@ const Header = () => {
 							aria-label="delete"
 							onClick={handleDrawerOpen}
 							className={clsx(classes.menuButton, open && classes.hide)}>
-							<MenuIcon />
+							{/* <MenuIcon /> */}
 							<span style={{marginLeft: '0.5em'}}>Tags</span>
 						</Button>
 						<div className={clsx(classes.logo)}>
