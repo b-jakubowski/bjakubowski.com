@@ -8,7 +8,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import Button from "@material-ui/core/Button"
@@ -108,7 +107,6 @@ const Header = () => {
 							aria-label="delete"
 							onClick={handleDrawerOpen}
 							className={clsx(classes.menuButton, open && classes.hide)}>
-							{/* <MenuIcon /> */}
 							<span style={{marginLeft: '0.5em'}}>Tags</span>
 						</Button>
 						<div className={clsx(classes.logo)}>
