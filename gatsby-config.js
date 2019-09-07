@@ -11,7 +11,7 @@ module.exports = {
 		`gatsby-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-remark`,
-		`gatsby-plugin-offline`,
+		// `gatsby-plugin-offline`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
