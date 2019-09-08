@@ -4,17 +4,29 @@ import { MuiThemeProvider } from '@material-ui/core';
 import Layout from '../components/layout';
 import theme from '../theme';
 import Button from "@material-ui/core/Button"
+import config from '../config';
 
 const styles = {
 	tagsContainer: {
 		display: 'flex',
-		flexDirection: 'column'
+		flexDirection: 'column',
+		width: config.layout.width,
+		padding: '1em',
+		backgroundColor: 'white',
+		minHeight: '400px'
 	},
-	blogPostTagText: {
+	title: {
+		marginBottom: '1em',
+		fontFamily: 'Rubik',
+		textAlign: 'center'
+	},
+	blogPostTagBtn: {
 		textDecoration: 'none',
 		color: 'white',
 		fontSize: '0.8em',
-		marginBottom: '1em'
+		marginBottom: '1em',
+		display: 'flex',
+		justifyContent: 'center'
 	},
 	blogPostTag: {
 		marginRight: '1em',
@@ -28,12 +40,12 @@ function Tags(props) {
 	return (
 		<MuiThemeProvider theme={theme}>
 			<Layout>
-				<h1>{`Available posts  in '${tag}' tag`}</h1>
 				<div style={styles.tagsContainer}>
+					<h1 style={styles.title}>{`Available posts  in '${tag}' tag`}</h1>
 					{
 						posts.map(({ node }, index) => {
 							return (
-								<Link to={node.fields.slug} key={index} style={styles.blogPostTagText}>
+								<Link to={node.fields.slug} key={index} style={styles.blogPostTagBtn}>
 									<Button variant="outlined" key={index} style={styles.blogPostTag} color="secondary">
 										{node.frontmatter.title}
 									</Button>
