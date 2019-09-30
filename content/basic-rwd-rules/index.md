@@ -3,7 +3,7 @@ title: Few RWD rules to remember
 description: Remember these rules when implementing website to mobile devices
 date: '2019-09-29'
 image: 'picture.jpg'
-tags: [front-end','ui']
+tags: ['front-end','ui']
 ---
 More users browse internet via mobile devices than through computer screens. There is no argue in that statement, statistics say for themselves. As front-end developers we should honor the users choice and make sure that the website or app, that we are implementing, is accessible and readable for mobile users. Here are some rules I gathered to help You think in responsive terms.
 
@@ -32,7 +32,7 @@ More users browse internet via mobile devices than through computer screens. The
 1. Consider using `max-width` css property. Max-width displays images at full size by default. When container shrinks the image also shrinks. Note - when container is bigger than img, image wont scale bigger that it originally is. When You just set `width` property, image will scale no matter its original size.
 	```
 	img {
-			max-width: 100%;
+	    max-width: 100%;
 	}
 	```
 
