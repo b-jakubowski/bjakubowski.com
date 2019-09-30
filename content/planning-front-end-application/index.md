@@ -3,7 +3,7 @@ title: Planning front-end application
 description: Few steps to plan front end application
 date: '2019-05-03'
 image: 'picture.jpg'
-tags: ['javascript','front-end','app-arch']
+tags: ['javascript','frontend','arch']
 ---
 Base on [Cody Lindley great talk on planning FE application](https://www.youtube.com/watch?v=XskMWBXNbp0&t=2s)
 

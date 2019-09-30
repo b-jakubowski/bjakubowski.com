@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby'
 import { MuiThemeProvider, Button } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
-import MetaTags from '../components/Metatags';
+import Metatags from '../components/metatags';
 import theme from '../theme';
 
 const styles = {
@@ -63,7 +63,7 @@ function BlogPost(props) {
 	return (
 		<MuiThemeProvider theme={theme}>
 			<Layout>
-				<MetaTags
+				<Metatags
 					title={title}
 					description={props.data.markdownRemark.excerpt}
 					thumbnail={thumbnail && url + thumbnail}
