@@ -6,6 +6,11 @@ import theme from '../theme';
 import Button from "@material-ui/core/Button"
 
 const styles = {
+	container: {
+		padding: '1em',
+		backgroundColor: 'white',
+		minHeight: '25em'
+	},
 	tagsContainer: {
 		display: 'flex',
 		flexDirection: 'column'
@@ -28,19 +33,21 @@ function Tags(props) {
 	return (
 		<MuiThemeProvider theme={theme}>
 			<Layout>
-				<h1>{`Available posts  in '${tag}' tag`}</h1>
-				<div style={styles.tagsContainer}>
-					{
-						posts.map(({ node }, index) => {
-							return (
-								<Link to={node.fields.slug} key={index} style={styles.blogPostTagText}>
-									<Button variant="outlined" key={index} style={styles.blogPostTag} color="secondary">
-										{node.frontmatter.title}
-									</Button>
-								</Link>
-							)
-						})
-					}
+				<div style={styles.container}>
+					<h1>{`Available posts  in '${tag}' tag`}</h1>
+					<div style={styles.tagsContainer}>
+						{
+							posts.map(({ node }, index) => {
+								return (
+									<Link to={node.fields.slug} key={index} style={styles.blogPostTagText}>
+										<Button variant="outlined" key={index} style={styles.blogPostTag} color="secondary">
+											{node.frontmatter.title}
+										</Button>
+									</Link>
+								)
+							})
+						}
+					</div>
 				</div>
 			</Layout>
 		</MuiThemeProvider>
