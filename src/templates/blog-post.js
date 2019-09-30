@@ -6,11 +6,9 @@ import { MuiThemeProvider, Button } from '@material-ui/core';
 import PreviousNextPost from '../components/previous-next-post';
 import MetaTags from '../components/Metatags';
 import theme from '../theme';
-import config from "../config"
 
 const styles = {
 	container: {
-    // maxWidth: config.layout.width,
 		padding: '1em',
 		backgroundColor: 'white'
 	},

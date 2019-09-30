@@ -3,7 +3,7 @@ title: Few RWD rules to remember
 description: Remember these rules when implementing website to mobile devices
 date: '2019-09-29'
 image: 'picture.jpg'
-tags: [front-end','ui']
+tags: ['front-end','ui']
 ---
 More users browse internet via mobile devices than through computer screens. There is no argue in that statement, statistics say for themselves. As front-end developers we should honor the users choice and make sure that the website or app, that we are implementing, is accessible and readable for mobile users. Here are some rules I gathered to help You think in responsive terms.
 
