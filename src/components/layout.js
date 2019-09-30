@@ -16,7 +16,8 @@ const styles = {
 		margin: '7em 0 4em 0'
 	},
 	content: {
-		maxWidth: '42rem'
+		maxWidth: '42rem',
+		width: '100%'
 	}
 }
 

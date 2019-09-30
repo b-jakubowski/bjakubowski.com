@@ -32,7 +32,7 @@ More users browse internet via mobile devices than through computer screens. The
 1. Consider using `max-width` css property. Max-width displays images at full size by default. When container shrinks the image also shrinks. Note - when container is bigger than img, image wont scale bigger that it originally is. When You just set `width` property, image will scale no matter its original size.
 	```
 	img {
-			max-width: 100%;
+	    max-width: 100%;
 	}
 	```
 

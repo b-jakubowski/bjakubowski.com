@@ -10,7 +10,7 @@ import config from "../config"
 
 const styles = {
 	container: {
-    maxWidth: config.layout.width,
+    // maxWidth: config.layout.width,
 		padding: '1em',
 		backgroundColor: 'white'
 	},
