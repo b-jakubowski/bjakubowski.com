@@ -16,6 +16,10 @@
       "title": "Frontend Performance checklist",
       "description": "Runs faster than the others",
       "link": "https://github.com/thedaviddias/Front-End-Performance-Checklist"
+    },{
+      "title": "Best readme template",
+      "description": "Title says it all",
+      "link": "https://github.com/othneildrew/Best-README-Template"
     }
   ],
   "Angular": [
