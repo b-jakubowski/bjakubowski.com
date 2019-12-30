@@ -4,7 +4,6 @@ import { MuiThemeProvider } from '@material-ui/core';
 import Layout from '../components/layout';
 import theme from '../theme';
 import Button from "@material-ui/core/Button"
-import config from '../config';
 
 const styles = {
 	container: {
@@ -15,7 +14,6 @@ const styles = {
 	tagsContainer: {
 		display: 'flex',
 		flexDirection: 'column',
-		width: config.layout.width,
 		padding: '1em',
 		backgroundColor: 'white',
 		minHeight: '400px'
@@ -35,6 +33,7 @@ const styles = {
 	},
 	blogPostTag: {
 		marginRight: '1em',
+		marginBottom: '1rem',
 		height: '2.5em'
 	}
 }
