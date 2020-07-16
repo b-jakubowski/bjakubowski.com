@@ -20,7 +20,7 @@
 		"gatsby-source-filesystem": "^2.1.11",
 		"gatsby-transformer-remark": "^2.3.8",
 		"gatsby-transformer-sharp": "^2.2.7",
-		"lodash": "^4.17.11",
+		"lodash": "^4.17.19",
 		"prop-types": "^15.7.2",
 		"radium": "^0.25.2",
 		"react": "^16.9.0",
