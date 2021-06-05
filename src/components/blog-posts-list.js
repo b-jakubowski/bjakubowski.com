@@ -13,19 +13,14 @@ const styles = {
 		margin: '0 1em 2em',
 		boxShadow: 'none'
 	},
-	blogPost: {
-		':hover': {
-			backgroundColor: 'rgba(48, 63, 159, 0.15)'
-		}
-	},
 	blogPostImg: {
 		height: '150px',
-		borderBottom: `2px solid ${theme.palette.secondary.main}`
 	},
 	blogPostTitle: {
 		fontFamily: 'Rubik',
-		fontSize: '1.8em',
+		fontSize: '2em',
 		fontWeight: 700,
+		marginTop: '0.3em',
 		marginBottom: '0.3em',
 		textAlign: 'center',
 		':hover': {
@@ -58,7 +53,7 @@ const BlogPostsList = ({ node }) => {
 		<Link to={postSlug} style={styles.link}>
 			<Card style={styles.blogPostCard}>
 				<article style={styles.blogPost}>
-					<Img fluid={postImg} style={styles.blogPostImg} />
+					{/* <Img fluid={postImg} style={styles.blogPostImg} /> */}
 					<CardContent>
 						<h2 style={styles.blogPostTitle} key={postTitle}>
 							{postTitle}

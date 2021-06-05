@@ -100,25 +100,26 @@ const Header = () => {
 			>
 				<nav>
 					<Toolbar>
+						<div className={clsx(classes.logo)}>
+							<Logo />
+						</div>
 						<Button
-							color="inherit"
+							color="secondary"
 							variant="text"
 							edge="start"
 							aria-label="delete"
 							onClick={handleDrawerOpen}
 							className={clsx(classes.menuButton, open && classes.hide)}>
-							<span style={{marginLeft: '0.5em'}}>Tags</span>
+							<span style={{ marginLeft: '0.5em' }}>Tags</span>
 						</Button>
-						<div className={clsx(classes.logo)}>
-							<Logo />
-						</div>
+
 						<Link to="/" className={classes.linkBtnText}>
-							<Button variant="text" color="secondary" className={classes.linkBtn}>
+							<Button variant="text" color="inherit" className={classes.linkBtn}>
 								Blog
 							</Button>
 						</Link>
 						<Link to="/tools" className={classes.linkBtnText}>
-							<Button variant="text" color="secondary" className={classes.linkBtn}>
+							<Button variant="text" color="inherit" className={classes.linkBtn}>
 								Tools
 							</Button>
 						</Link>

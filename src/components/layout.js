@@ -13,7 +13,7 @@ const styles = {
 		flexDirection: 'column',
 		alignItems: 'center',
 		width: '100%',
-		margin: '7em 0 4em 0'
+		margin: '6em 0 4em 0'
 	},
 	content: {
 		maxWidth: '42rem',
@@ -22,15 +22,15 @@ const styles = {
 }
 
 const Layout = ({ children }) => (
-		<>
-			<SEO />
-			<Header />
-			<main style={styles.container}>
-				<div style={styles.content}>{children}</div>
-			</main>
-			<Footer/>
-		</>
-	)
+	<>
+		<SEO />
+		<Header />
+		<main style={styles.container}>
+			<div style={styles.content}>{children}</div>
+		</main>
+		<Footer />
+	</>
+)
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,
