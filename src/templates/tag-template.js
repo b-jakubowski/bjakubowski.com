@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import { MuiThemeProvider } from '@material-ui/core';
 import Layout from '../components/layout';
 import theme from '../theme';
-import Button from "@material-ui/core/Button"
 
 const styles = {
 	container: {
@@ -51,9 +50,7 @@ function Tags(props) {
 							posts.map(({ node }, index) => {
 								return (
 									<Link to={node.fields.slug} key={index} style={styles.blogPostTagText}>
-										<Button variant="outlined" key={index} style={styles.blogPostTag} color="secondary">
-											{node.frontmatter.title}
-										</Button>
+										{node.frontmatter.title}
 									</Link>
 								)
 							})
