@@ -27,3 +27,5 @@ _[More on Gene Kim article on the subject](https://itrevolution.com/the-three-wa
 - The First way - Systems thinking, controling flow of work.
 - The Second Way: Amplify feedback loops
 - The Third Way: Culture of continual experimentation and learning
+
+Post _Photo by [Christina @wocintechchat.com](https://unsplash.com/@wocintechchat?utm) on Unsplash_

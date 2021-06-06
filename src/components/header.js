@@ -123,6 +123,11 @@ const Header = () => {
 								Tools
 							</Button>
 						</Link>
+						<Link to="/tech-notes" className={classes.linkBtnText}>
+							<Button variant="text" color="inherit" className={classes.linkBtn}>
+								Tech Notes
+							</Button>
+						</Link>
 						{/* <Link to="/projects" className={classes.linkBtnText}>
 							<Button variant="text" color="secondary" className={classes.linkBtn}>
 								Projects
