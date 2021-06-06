@@ -3,8 +3,8 @@ import Helmet from "react-helmet"
 
 import useSiteMetadata from "../hooks/useSiteMetadata";
 
-function SEO() {
-	const {title, description, author} = useSiteMetadata();
+function Seo() {
+	const { title, description, author } = useSiteMetadata();
 
 	return (
 		<Helmet
@@ -38,4 +38,4 @@ function SEO() {
 	)
 }
 
-export default SEO
+export default Seo

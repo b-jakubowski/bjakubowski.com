@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import SEO from "./seo"
+import Seo from "./seo"
 import "./layout.css"
 import Footer from "./footer"
 
@@ -23,7 +23,7 @@ const styles = {
 
 const Layout = ({ children }) => (
 	<>
-		<SEO />
+		<Seo />
 		<Header />
 		<main style={styles.container}>
 			<div style={styles.content}>{children}</div>

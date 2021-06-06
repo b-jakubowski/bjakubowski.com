@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import React from 'react';
 import { Card, CardContent, Typography } from "@material-ui/core";
 import Radium from 'radium';
@@ -44,7 +44,7 @@ const styles = {
 
 const BlogPostsList = ({ node }) => {
 	const postSlug = node.fields.slug;
-	const postImg = node.frontmatter.image.childImageSharp.fluid;
+	// const postImg = node.frontmatter.image.childImageSharp.fluid;
 	const postTitle = node.frontmatter.title;
 	const postDate = node.frontmatter.date;
 	const postExcerpt = node.excerpt;
