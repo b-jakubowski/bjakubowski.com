@@ -79,6 +79,11 @@
       "title": "Regex101",
       "description": "Online regex tester and debugger",
       "link": "https://regex101.com"
+    },
+    {
+      "title": "ExtendsClass",
+      "description": "Online visual regex tester",
+      "link": "https://extendsclass.com/regex-tester.html"
     }
   ],
   "Design": [
