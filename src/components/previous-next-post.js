@@ -22,7 +22,7 @@ const PreviousNextPost = (props) => {
 				<div style={styles.buttonContainer}>
 					<Tooltip title={prev.frontmatter.title}>
 						<Link to={prev.fields.slug} style={styles.buttonText}>
-							<Button color="secondary" variant="contained">
+							<Button variant="contained">
 								<span className="material-icons">keyboard_arrow_left</span>
 								Prev post
 							</Button>
@@ -35,7 +35,7 @@ const PreviousNextPost = (props) => {
 					<div style={{ flexGrow: 1 }}></div>
 					<Tooltip title={next.frontmatter.title}>
 						<Link to={next.fields.slug} style={styles.buttonText}>
-							<Button color="secondary" variant="contained">
+							<Button variant="contained">
 								Next post
 								<span className="material-icons">keyboard_arrow_right</span>
 							</Button>

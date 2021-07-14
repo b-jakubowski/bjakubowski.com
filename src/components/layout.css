@@ -616,6 +616,9 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+.gatsby-highlight {
+  font-size: 0.85em;
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
