@@ -34,7 +34,7 @@ function TagsPage() {
     <MuiThemeProvider theme={theme}>
       <Layout>
         <div className={classes.container}>
-          <h1>Categories</h1>
+          <h1>Tags</h1>
           <div className={classes.tagsContainer}>
             {tagsList.map((tag, index) => (
               <Link
