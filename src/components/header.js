@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles()
-  const theme = useTheme()
 
   return (
     <div className={classes.root}>
@@ -52,6 +51,7 @@ const Header = () => {
             flexWrap="wrap"
             alignItems="center"
             justifyContent="center"
+            paddingTop="1rem"
           >
             <div className={clsx(classes.logo)}>
               <Logo />
@@ -61,23 +61,13 @@ const Header = () => {
                 Blog
               </Button>
             </Link>
-            {/* MOVE BELOW TO HANDBOOKS SECTION */}
-            {/* <Link to="/tools" className={classes.linkBtnText}>
+            <Link to="/notebooks" className={classes.linkBtnText}>
               <Button
                 variant="text"
                 color="secondary"
                 className={classes.linkBtn}
               >
-                Tools
-              </Button>
-            </Link> */}
-            <Link to="/handbooks" className={classes.linkBtnText}>
-              <Button
-                variant="text"
-                color="secondary"
-                className={classes.linkBtn}
-              >
-                Handbooks
+                Notebooks
               </Button>
             </Link>
             <Link to="/tags" className={classes.linkBtnText}>
@@ -85,14 +75,6 @@ const Header = () => {
                 Tags
               </Button>
             </Link>
-            {/* <Link to="/projects" className={classes.linkBtnText}>
-							<Button variant="text" color="secondary" className={classes.linkBtn}>
-								Projects
-							</Button>
-						</Link> */}
-            {/* <Button variant="text" color="secondary" className={classes.linkBtn}>
-							<Link to="/tags" className={classes.linkBtnText}>Tags</Link>
-						</Button> */}
           </Box>
         </nav>
       </AppBar>

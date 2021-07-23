@@ -13,7 +13,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     width: "100%",
-    margin: "5em 0 4em 0",
+    margin: "4em 0 4em 0",
   },
   content: {
     maxWidth: "42rem",
