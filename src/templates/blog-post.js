@@ -2,18 +2,11 @@ import React from "react"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
-import {
-  MuiThemeProvider,
-  Button,
-  Typography,
-  TextField,
-  Paper,
-  Grid,
-} from "@material-ui/core"
+import { MuiThemeProvider, Button, Divider } from "@material-ui/core"
 import PreviousNextPost from "../components/previous-next-post"
 import Metatags from "../components/metatags"
 import theme from "../theme"
-import addToMailchimp from "gatsby-plugin-mailchimp"
+import { NewsletterBox } from "../components/newsletter-box"
 
 const styles = {
   container: {
@@ -52,6 +45,9 @@ const styles = {
     fontFamily: "Roboto",
     fontSize: "1.15em",
     lineHeight: "1.6em",
+  },
+  newsletterBox: {
+    margin: "3rem 0 2rem 0",
   },
 }
 
@@ -103,45 +99,13 @@ function BlogPost(props) {
             style={styles.blogPostContent}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
+          <div style={styles.newsletterBox}>
+            <Divider variant="fullWidth" />
+            <NewsletterBox />
+            <Divider variant="fullWidth" />
+          </div>
           <PreviousNextPost prev={prev && prev.node} next={next && next.node} />
         </article>
-        {/*  */}
-        {/* <div>
-					<form onSubmit={(e) => console.log(e.target.value)}>
-						<Paper style={{ padding: '1.5em' }}>
-							<div style={{ paddingTop: '1em', paddingBottom: '3em' }}>
-								<Typography variant="h3" gutterBottom>Hey there!</Typography>
-								<Typography>I will ocasionally send updates: New posts on blog, Tools I use and love, Health news I find interesting and
-									Cool stuff I recommend. Lets stay in touch!</Typography>
-							</div>
-							<Grid container spacing={5}>
-								<Grid item xs={12} sm={4} md={4}>
-									<TextField
-										id="outlined-error-helper-text"
-										label="Name"
-										variant="outlined"
-									/>
-								</Grid>
-								<Grid item xs={12} sm={5} md={5}>
-									<TextField
-										// error
-										id="outlined-error-helper-text"
-										label="Email"
-										variant="outlined"
-										email
-									/>
-								</Grid>
-								<Grid item xs={4} sm={3} md={3}>
-									<div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
-										<Button type="submit" variant="contained" color="secondary">
-											Subscribe
-										</Button>
-									</div>
-								</Grid>
-							</Grid>
-						</Paper>
-					</form>
-				</div> */}
       </Layout>
     </MuiThemeProvider>
   )

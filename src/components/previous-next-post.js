@@ -24,7 +24,7 @@ const PreviousNextPost = (props) => {
             <Link to={prev.fields.slug} style={styles.buttonText}>
               <Button variant="outlined">
                 <span className="material-icons">keyboard_arrow_left</span>
-                Prev post
+                Previous post
               </Button>
             </Link>
           </Tooltip>
