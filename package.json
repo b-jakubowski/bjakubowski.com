@@ -8,6 +8,7 @@
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.4",
+    "formik": "^2.2.9",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.6.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -31,7 +32,8 @@
     "radium": "^0.26.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "prettier": "^2.3.1"
