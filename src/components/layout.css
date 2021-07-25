@@ -617,7 +617,7 @@ pre tt:after {
   content: "";
 }
 .gatsby-highlight {
-  font-size: 0.85em;
+  font-size: 0.75rem;
 }
 @media only screen and (max-width: 480px) {
   html {
