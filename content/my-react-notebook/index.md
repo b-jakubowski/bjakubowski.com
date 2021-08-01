@@ -1,5 +1,5 @@
 ---
-title: "My React Wiki"
+title: "My React Notebook"
 description: "My collection of patterns, good practices, libraries and notes on React"
 date: "2021-06-05"
 image: "picture.jpg"
@@ -11,29 +11,31 @@ This wiki will be updated as soon as i learn something new worth mentioning.
 **Table of content**
 
 - [Patterns](#patterns)
-  - [5 advances react patterns](#5-patterns)
+  - [5 advances react patterns <a name="5-patterns"></a>](#5-advances-react-patterns-)
   - [Higher-Order Component](#higher-order-component)
   - [Compound components](#compound-components)
 - [Typescript](#typescript)
 - [Refs](#refs)
 - [Errors](#errors)
-  - [Error boundaries class](#error-boundaries)
+  - [Error boundaries class](#error-boundaries-class)
 - [Performance](#performance)
   - [Re-rendering](#re-rendering)
-  - [Code splitting](#re-rendering)
-  - [DevTools](#devtools)
+  - [Code splitting](#code-splitting)
+  - [DevTools help](#devtools-help)
   - [Memoization](#memoization)
+  - [Immutable Data Structures](#immutable-data-structures)
   - [Avoid Anonymous Functions](#avoid-anonymous-functions)
 - [Docker with React](#docker-with-react)
 - [Virtual DOM](#virtual-dom)
-- [Declarative over imperative](#declarative-over-imperative)
+- [Declarative over imperative programming paradigm](#declarative-over-imperative-programming-paradigm)
 - [Presenter and container components](#presenter-and-container-components)
 - [State management](#state-management)
 - [Hooks](#hooks)
   - [useMemo](#usememo)
+  - [useCallback](#usecallback)
   - [useEffect](#useeffect)
   - [useReducer](#usereducer)
-- [Testing](#usereducer)
+- [Testing](#testing)
   - [Testing UI Storybook](#testing-ui-storybook)
   - [Unit testing](#unit-testing)
   - [Integration testing](#integration-testing)
@@ -66,7 +68,7 @@ dummy HOC:
 ```jsx
 import React from "react"
 // Take in a component as argument WrappedComponent
-const higherOrderComponent = WrappedComponent => {
+const higherOrderComponent = (WrappedComponent) => {
   // And return another component
   const HOC = () => <WrappedComponent />
 

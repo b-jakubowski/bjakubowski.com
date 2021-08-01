@@ -43,6 +43,13 @@ function TagsPage() {
                 text="My notes on React"
               />
             </Grid>
+            <Grid item xs={12} sm={6}>
+              <NotebookTile
+                link="/health-notes"
+                title="Health Notes"
+                text="Notes, thoughts and health practices that work for me"
+              />
+            </Grid>
             {/* <Grid item xs={12} sm={6}>
               <NotebookTile
                 link="/health-notes"
