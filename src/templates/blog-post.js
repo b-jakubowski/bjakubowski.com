@@ -6,7 +6,7 @@ import { MuiThemeProvider, Button, Divider } from "@material-ui/core"
 import PreviousNextPost from "../components/previous-next-post"
 import Metatags from "../components/metatags"
 import theme from "../theme"
-import { NewsletterBox } from "../components/newsletter-box"
+// import { NewsletterBox } from "../components/newsletter-box"
 
 const styles = {
   container: {
@@ -99,11 +99,11 @@ function BlogPost(props) {
             style={styles.blogPostContent}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          <div style={styles.newsletterBox}>
+          {/* <div style={styles.newsletterBox}>
             <Divider variant="fullWidth" />
             <NewsletterBox />
             <Divider variant="fullWidth" />
-          </div>
+          </div> */}
           <PreviousNextPost prev={prev && prev.node} next={next && next.node} />
         </article>
       </Layout>
