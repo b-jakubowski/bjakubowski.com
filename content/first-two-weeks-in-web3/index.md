@@ -3,7 +3,7 @@ title: "First Two Weeks in web3"
 description: "Why web 3?"
 date: "2021-11-01"
 image: "picture.jpg"
-tags: ["health", "productivity"]
+tags: ["web3", "blockchain", "ethereum"]
 ---
 
 Table of contents
